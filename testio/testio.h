@@ -16,7 +16,7 @@ typedef struct {
 } InputParams;
 
 typedef struct {
-	
+	int digit0, digit1, digit2;
 } OutputParams;
 
 typedef struct {

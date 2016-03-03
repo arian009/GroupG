@@ -142,4 +142,3 @@ void display_string(char *str)
 	for(i=0; str[i]; i++) 
 		display_char(str[i]);
 }
-

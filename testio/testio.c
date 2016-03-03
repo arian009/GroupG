@@ -3,6 +3,7 @@
  * PIN USAGE
  *    PORT A - 0:AIn0, 1:AIn1, 2:AIn2, 3:DIn0, 4:DIn1, 5:Din2
  *    PORT B - LCD Control Port
+ *    PORT C - 0:Dout0
  *    PORT D - LCD Data Port
  * 
  * 
@@ -58,25 +59,29 @@ void process(State* state, InputParams* src, OutputParams* dest) {
 	state->lastVoltage2 = src->analog1;
 	state->lastVoltage3 = src->analog2;
 	
-	if(src->digit0) {
+	if(!src->digit0) {
 		fill_rectangle(state->r2, RED);
 	} else {
 		fill_rectangle(state->r2, BLACK);
 	}
-	if(src->digit1) {
+	if(!src->digit1) {
 		fill_rectangle(state->r3, GREEN);
 	} else {
 		fill_rectangle(state->r3, BLACK);
 	}
-	if(src->digit2) {
+	if(!src->digit2) {
 		fill_rectangle(state->r4, BLUE);
 	} else {
 		fill_rectangle(state->r4, BLACK);
 	}
+	
+	dest->digit0 = !(src->digit0 & src->digit1);
+	dest->digit1 = 1;
+	dest->digit2 = 1;
 }
 
 void output(OutputParams* src) {
-
+	PORTC = (src->digit0 << 0) | (src->digit1 << 1) | (src->digit2 << 2);
 }
 
 int main(void) {
