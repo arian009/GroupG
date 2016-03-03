@@ -1,0 +1,3322 @@
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 1
+
+
+   1               		.file	"lcd.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.section	.debug_abbrev,"",@progbits
+   9               	.Ldebug_abbrev0:
+  10               		.section	.debug_info,"",@progbits
+  11               	.Ldebug_info0:
+  12               		.section	.debug_line,"",@progbits
+  13               	.Ldebug_line0:
+  14               		.text
+  15               	.Ltext0:
+  16               	.global	set_orientation
+  17               		.type	set_orientation, @function
+  18               	set_orientation:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 9C01      		movw r18,r24
+  25               	.LM2:
+  26 0002 9093 0000 		sts (display+4)+1,r25
+  27 0006 8093 0000 		sts display+4,r24
+  28               	.LM3:
+  29 000a 2C98      		cbi 37-32,4
+  30 000c 86E3      		ldi r24,lo8(54)
+  31               	.LVL1:
+  32 000e 8BB9      		out 43-32,r24
+  33 0010 2B98      		cbi 37-32,3
+  34 0012 2B9A      		sbi 37-32,3
+  35 0014 2C9A      		sbi 37-32,4
+  36               	.LM4:
+  37 0016 2115      		cp r18,__zero_reg__
+  38 0018 3105      		cpc r19,__zero_reg__
+  39 001a 01F4      		brne .L2
+  40               	.LM5:
+  41 001c 80EF      		ldi r24,lo8(240)
+  42 001e 90E0      		ldi r25,hi8(240)
+  43 0020 9093 0000 		sts (display)+1,r25
+  44 0024 8093 0000 		sts display,r24
+  45               	.LM6:
+  46 0028 80E4      		ldi r24,lo8(320)
+  47 002a 91E0      		ldi r25,hi8(320)
+  48 002c 9093 0000 		sts (display+2)+1,r25
+  49 0030 8093 0000 		sts display+2,r24
+  50               	.LM7:
+  51 0034 88E4      		ldi r24,lo8(72)
+  52 0036 00C0      		rjmp .L7
+  53               	.L2:
+  54               	.LM8:
+  55 0038 2130      		cpi r18,1
+  56 003a 3105      		cpc r19,__zero_reg__
+  57 003c 01F4      		brne .L4
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 2
+
+
+  58               	.LM9:
+  59 003e 80E4      		ldi r24,lo8(320)
+  60 0040 91E0      		ldi r25,hi8(320)
+  61 0042 9093 0000 		sts (display)+1,r25
+  62 0046 8093 0000 		sts display,r24
+  63               	.LM10:
+  64 004a 80EF      		ldi r24,lo8(240)
+  65 004c 90E0      		ldi r25,hi8(240)
+  66 004e 9093 0000 		sts (display+2)+1,r25
+  67 0052 8093 0000 		sts display+2,r24
+  68               	.LM11:
+  69 0056 88EE      		ldi r24,lo8(-24)
+  70 0058 00C0      		rjmp .L7
+  71               	.L4:
+  72               	.LM12:
+  73 005a 2230      		cpi r18,2
+  74 005c 3105      		cpc r19,__zero_reg__
+  75 005e 01F4      		brne .L5
+  76               	.LM13:
+  77 0060 80EF      		ldi r24,lo8(240)
+  78 0062 90E0      		ldi r25,hi8(240)
+  79 0064 9093 0000 		sts (display)+1,r25
+  80 0068 8093 0000 		sts display,r24
+  81               	.LM14:
+  82 006c 80E4      		ldi r24,lo8(320)
+  83 006e 91E0      		ldi r25,hi8(320)
+  84 0070 9093 0000 		sts (display+2)+1,r25
+  85 0074 8093 0000 		sts display+2,r24
+  86               	.LM15:
+  87 0078 88E8      		ldi r24,lo8(-120)
+  88 007a 00C0      		rjmp .L7
+  89               	.L5:
+  90               	.LM16:
+  91 007c 2330      		cpi r18,3
+  92 007e 3105      		cpc r19,__zero_reg__
+  93 0080 01F4      		brne .L3
+  94               	.LM17:
+  95 0082 80E4      		ldi r24,lo8(320)
+  96 0084 91E0      		ldi r25,hi8(320)
+  97 0086 9093 0000 		sts (display)+1,r25
+  98 008a 8093 0000 		sts display,r24
+  99               	.LM18:
+ 100 008e 80EF      		ldi r24,lo8(240)
+ 101 0090 90E0      		ldi r25,hi8(240)
+ 102 0092 9093 0000 		sts (display+2)+1,r25
+ 103 0096 8093 0000 		sts display+2,r24
+ 104               	.LM19:
+ 105 009a 88E2      		ldi r24,lo8(40)
+ 106               	.L7:
+ 107 009c 8BB9      		out 43-32,r24
+ 108 009e 2B98      		cbi 37-32,3
+ 109 00a0 2B9A      		sbi 37-32,3
+ 110               	.L3:
+ 111               	.LM20:
+ 112 00a2 2C98      		cbi 37-32,4
+ 113 00a4 8AE2      		ldi r24,lo8(42)
+ 114 00a6 8BB9      		out 43-32,r24
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 3
+
+
+ 115 00a8 2B98      		cbi 37-32,3
+ 116 00aa 2B9A      		sbi 37-32,3
+ 117 00ac 2C9A      		sbi 37-32,4
+ 118               	.LM21:
+ 119 00ae 1BB8      		out 43-32,__zero_reg__
+ 120 00b0 2B98      		cbi 37-32,3
+ 121 00b2 2B9A      		sbi 37-32,3
+ 122 00b4 1BB8      		out 43-32,__zero_reg__
+ 123 00b6 2B98      		cbi 37-32,3
+ 124 00b8 2B9A      		sbi 37-32,3
+ 125               	.LM22:
+ 126 00ba 8091 0000 		lds r24,display
+ 127 00be 9091 0000 		lds r25,(display)+1
+ 128 00c2 0197      		sbiw r24,1
+ 129 00c4 9BB9      		out 43-32,r25
+ 130 00c6 0196      		adiw r24,1
+ 131 00c8 2B98      		cbi 37-32,3
+ 132 00ca 2B9A      		sbi 37-32,3
+ 133 00cc 8150      		subi r24,lo8(-(-1))
+ 134 00ce 8BB9      		out 43-32,r24
+ 135 00d0 2B98      		cbi 37-32,3
+ 136 00d2 2B9A      		sbi 37-32,3
+ 137               	.LM23:
+ 138 00d4 2C98      		cbi 37-32,4
+ 139 00d6 8BE2      		ldi r24,lo8(43)
+ 140 00d8 8BB9      		out 43-32,r24
+ 141 00da 2B98      		cbi 37-32,3
+ 142 00dc 2B9A      		sbi 37-32,3
+ 143 00de 2C9A      		sbi 37-32,4
+ 144               	.LM24:
+ 145 00e0 1BB8      		out 43-32,__zero_reg__
+ 146 00e2 2B98      		cbi 37-32,3
+ 147 00e4 2B9A      		sbi 37-32,3
+ 148 00e6 1BB8      		out 43-32,__zero_reg__
+ 149 00e8 2B98      		cbi 37-32,3
+ 150 00ea 2B9A      		sbi 37-32,3
+ 151               	.LM25:
+ 152 00ec 8091 0000 		lds r24,display+2
+ 153 00f0 9091 0000 		lds r25,(display+2)+1
+ 154 00f4 0197      		sbiw r24,1
+ 155 00f6 9BB9      		out 43-32,r25
+ 156 00f8 0196      		adiw r24,1
+ 157 00fa 2B98      		cbi 37-32,3
+ 158 00fc 2B9A      		sbi 37-32,3
+ 159 00fe 8150      		subi r24,lo8(-(-1))
+ 160 0100 8BB9      		out 43-32,r24
+ 161 0102 2B98      		cbi 37-32,3
+ 162 0104 2B9A      		sbi 37-32,3
+ 163               	/* epilogue start */
+ 164               	.LM26:
+ 165 0106 0895      		ret
+ 166               	.LFE3:
+ 167               		.size	set_orientation, .-set_orientation
+ 168               	.global	get_orientation
+ 169               		.type	get_orientation, @function
+ 170               	get_orientation:
+ 171               	.LFB4:
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 4
+
+
+ 172               	.LM27:
+ 173               	/* prologue: function */
+ 174               	/* frame size = 0 */
+ 175               	.LM28:
+ 176 0108 8091 0000 		lds r24,display+4
+ 177 010c 9091 0000 		lds r25,display+5
+ 178               	/* epilogue start */
+ 179 0110 0895      		ret
+ 180               	.LFE4:
+ 181               		.size	get_orientation, .-get_orientation
+ 182               	.global	get_width
+ 183               		.type	get_width, @function
+ 184               	get_width:
+ 185               	.LFB5:
+ 186               	.LM29:
+ 187               	/* prologue: function */
+ 188               	/* frame size = 0 */
+ 189               	.LM30:
+ 190 0112 8091 0000 		lds r24,display
+ 191 0116 9091 0000 		lds r25,display+1
+ 192               	/* epilogue start */
+ 193 011a 0895      		ret
+ 194               	.LFE5:
+ 195               		.size	get_width, .-get_width
+ 196               	.global	get_height
+ 197               		.type	get_height, @function
+ 198               	get_height:
+ 199               	.LFB6:
+ 200               	.LM31:
+ 201               	/* prologue: function */
+ 202               	/* frame size = 0 */
+ 203               	.LM32:
+ 204 011c 8091 0000 		lds r24,display+2
+ 205 0120 9091 0000 		lds r25,display+3
+ 206               	/* epilogue start */
+ 207 0124 0895      		ret
+ 208               	.LFE6:
+ 209               		.size	get_height, .-get_height
+ 210               	.global	fill_rectangle
+ 211               		.type	fill_rectangle, @function
+ 212               	fill_rectangle:
+ 213               	.LFB7:
+ 214               	.LM33:
+ 215               	.LVL2:
+ 216 0126 EF92      		push r14
+ 217 0128 FF92      		push r15
+ 218 012a 0F93      		push r16
+ 219               	.LVL3:
+ 220 012c 1F93      		push r17
+ 221 012e DF93      		push r29
+ 222 0130 CF93      		push r28
+ 223 0132 CDB7      		in r28,__SP_L__
+ 224 0134 DEB7      		in r29,__SP_H__
+ 225 0136 2897      		sbiw r28,8
+ 226 0138 0FB6      		in __tmp_reg__,__SREG__
+ 227 013a F894      		cli
+ 228 013c DEBF      		out __SP_H__,r29
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 5
+
+
+ 229 013e 0FBE      		out __SREG__,__tmp_reg__
+ 230 0140 CDBF      		out __SP_L__,r28
+ 231               	/* prologue: function */
+ 232               	/* frame size = 8 */
+ 233 0142 F22F      		mov r31,r18
+ 234 0144 2983      		std Y+1,r18
+ 235 0146 E32F      		mov r30,r19
+ 236 0148 3A83      		std Y+2,r19
+ 237 014a 4B83      		std Y+3,r20
+ 238 014c 5C83      		std Y+4,r21
+ 239 014e 362F      		mov r19,r22
+ 240 0150 6D83      		std Y+5,r22
+ 241 0152 272F      		mov r18,r23
+ 242 0154 7E83      		std Y+6,r23
+ 243 0156 8F83      		std Y+7,r24
+ 244 0158 9887      		std Y+8,r25
+ 245 015a 7801      		movw r14,r16
+ 246               	.LM34:
+ 247 015c AB81      		ldd r26,Y+3
+ 248 015e BC81      		ldd r27,Y+4
+ 249 0160 062F      		mov r16,r22
+ 250 0162 172F      		mov r17,r23
+ 251 0164 6F81      		ldd r22,Y+7
+ 252 0166 7885      		ldd r23,Y+8
+ 253               	.LM35:
+ 254 0168 2C98      		cbi 37-32,4
+ 255 016a 8AE2      		ldi r24,lo8(42)
+ 256 016c 8BB9      		out 43-32,r24
+ 257 016e 2B98      		cbi 37-32,3
+ 258 0170 2B9A      		sbi 37-32,3
+ 259 0172 2C9A      		sbi 37-32,4
+ 260               	.LM36:
+ 261 0174 EBB9      		out 43-32,r30
+ 262 0176 2B98      		cbi 37-32,3
+ 263 0178 2B9A      		sbi 37-32,3
+ 264 017a FBB9      		out 43-32,r31
+ 265 017c 2B98      		cbi 37-32,3
+ 266 017e 2B9A      		sbi 37-32,3
+ 267               	.LM37:
+ 268 0180 BBB9      		out 43-32,r27
+ 269 0182 2B98      		cbi 37-32,3
+ 270 0184 2B9A      		sbi 37-32,3
+ 271 0186 ABB9      		out 43-32,r26
+ 272 0188 2B98      		cbi 37-32,3
+ 273 018a 2B9A      		sbi 37-32,3
+ 274               	.LM38:
+ 275 018c 2C98      		cbi 37-32,4
+ 276 018e 8BE2      		ldi r24,lo8(43)
+ 277 0190 8BB9      		out 43-32,r24
+ 278 0192 2B98      		cbi 37-32,3
+ 279 0194 2B9A      		sbi 37-32,3
+ 280 0196 2C9A      		sbi 37-32,4
+ 281               	.LM39:
+ 282 0198 2BB9      		out 43-32,r18
+ 283 019a 2B98      		cbi 37-32,3
+ 284 019c 2B9A      		sbi 37-32,3
+ 285 019e 3BB9      		out 43-32,r19
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 6
+
+
+ 286 01a0 2B98      		cbi 37-32,3
+ 287 01a2 2B9A      		sbi 37-32,3
+ 288               	.LM40:
+ 289 01a4 7BB9      		out 43-32,r23
+ 290 01a6 2B98      		cbi 37-32,3
+ 291 01a8 2B9A      		sbi 37-32,3
+ 292 01aa 6BB9      		out 43-32,r22
+ 293 01ac 2B98      		cbi 37-32,3
+ 294 01ae 2B9A      		sbi 37-32,3
+ 295               	.LM41:
+ 296 01b0 2C98      		cbi 37-32,4
+ 297 01b2 8CE2      		ldi r24,lo8(44)
+ 298 01b4 8BB9      		out 43-32,r24
+ 299 01b6 2B98      		cbi 37-32,3
+ 300 01b8 2B9A      		sbi 37-32,3
+ 301 01ba 2C9A      		sbi 37-32,4
+ 302               	.LM42:
+ 303 01bc 2F2F      		mov r18,r31
+ 304               	.LVL4:
+ 305 01be 3E2F      		mov r19,r30
+ 306               	.LVL5:
+ 307 01c0 C901      		movw r24,r18
+ 308               	.LVL6:
+ 309 01c2 AC01      		movw r20,r24
+ 310               	.LVL7:
+ 311 01c4 00C0      		rjmp .L15
+ 312               	.LVL8:
+ 313               	.L16:
+ 314               	.LM43:
+ 315 01c6 FBB8      		out 43-32,r15
+ 316               	.LM44:
+ 317 01c8 2B98      		cbi 37-32,3
+ 318 01ca 2B9A      		sbi 37-32,3
+ 319 01cc EBB8      		out 43-32,r14
+ 320 01ce 2B98      		cbi 37-32,3
+ 321 01d0 2B9A      		sbi 37-32,3
+ 322               	.LM45:
+ 323 01d2 2F5F      		subi r18,lo8(-(1))
+ 324 01d4 3F4F      		sbci r19,hi8(-(1))
+ 325               	.L18:
+ 326 01d6 6217      		cp r22,r18
+ 327 01d8 7307      		cpc r23,r19
+ 328 01da 00F4      		brsh .L16
+ 329               	.LM46:
+ 330 01dc 4F5F      		subi r20,lo8(-(1))
+ 331 01de 5F4F      		sbci r21,hi8(-(1))
+ 332               	.LVL9:
+ 333               	.L15:
+ 334 01e0 A417      		cp r26,r20
+ 335 01e2 B507      		cpc r27,r21
+ 336 01e4 00F0      		brlo .L19
+ 337 01e6 9801      		movw r18,r16
+ 338               	.LVL10:
+ 339 01e8 00C0      		rjmp .L18
+ 340               	.LVL11:
+ 341               	.L19:
+ 342               	/* epilogue start */
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 7
+
+
+ 343               	.LM47:
+ 344 01ea 2896      		adiw r28,8
+ 345 01ec 0FB6      		in __tmp_reg__,__SREG__
+ 346 01ee F894      		cli
+ 347 01f0 DEBF      		out __SP_H__,r29
+ 348 01f2 0FBE      		out __SREG__,__tmp_reg__
+ 349 01f4 CDBF      		out __SP_L__,r28
+ 350 01f6 CF91      		pop r28
+ 351 01f8 DF91      		pop r29
+ 352 01fa 1F91      		pop r17
+ 353 01fc 0F91      		pop r16
+ 354 01fe FF90      		pop r15
+ 355               	.LVL12:
+ 356 0200 EF90      		pop r14
+ 357               	.LVL13:
+ 358 0202 0895      		ret
+ 359               	.LFE7:
+ 360               		.size	fill_rectangle, .-fill_rectangle
+ 361               	.global	fill_rectangle_indexed
+ 362               		.type	fill_rectangle_indexed, @function
+ 363               	fill_rectangle_indexed:
+ 364               	.LFB8:
+ 365               	.LM48:
+ 366               	.LVL14:
+ 367 0204 EF92      		push r14
+ 368 0206 FF92      		push r15
+ 369 0208 0F93      		push r16
+ 370               	.LVL15:
+ 371 020a 1F93      		push r17
+ 372 020c DF93      		push r29
+ 373 020e CF93      		push r28
+ 374 0210 CDB7      		in r28,__SP_L__
+ 375 0212 DEB7      		in r29,__SP_H__
+ 376 0214 2897      		sbiw r28,8
+ 377 0216 0FB6      		in __tmp_reg__,__SREG__
+ 378 0218 F894      		cli
+ 379 021a DEBF      		out __SP_H__,r29
+ 380 021c 0FBE      		out __SREG__,__tmp_reg__
+ 381 021e CDBF      		out __SP_L__,r28
+ 382               	/* prologue: function */
+ 383               	/* frame size = 8 */
+ 384 0220 F22F      		mov r31,r18
+ 385 0222 2983      		std Y+1,r18
+ 386 0224 E32F      		mov r30,r19
+ 387 0226 3A83      		std Y+2,r19
+ 388 0228 4B83      		std Y+3,r20
+ 389 022a 5C83      		std Y+4,r21
+ 390 022c 362F      		mov r19,r22
+ 391 022e 6D83      		std Y+5,r22
+ 392 0230 272F      		mov r18,r23
+ 393 0232 7E83      		std Y+6,r23
+ 394 0234 8F83      		std Y+7,r24
+ 395 0236 9887      		std Y+8,r25
+ 396 0238 D801      		movw r26,r16
+ 397               	.LVL16:
+ 398               	.LM49:
+ 399 023a 0B81      		ldd r16,Y+3
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 8
+
+
+ 400 023c 1C81      		ldd r17,Y+4
+ 401               	.LVL17:
+ 402 023e E62E      		mov r14,r22
+ 403 0240 F72E      		mov r15,r23
+ 404 0242 6F81      		ldd r22,Y+7
+ 405 0244 7885      		ldd r23,Y+8
+ 406               	.LM50:
+ 407 0246 2C98      		cbi 37-32,4
+ 408 0248 8AE2      		ldi r24,lo8(42)
+ 409 024a 8BB9      		out 43-32,r24
+ 410 024c 2B98      		cbi 37-32,3
+ 411 024e 2B9A      		sbi 37-32,3
+ 412 0250 2C9A      		sbi 37-32,4
+ 413               	.LM51:
+ 414 0252 EBB9      		out 43-32,r30
+ 415 0254 2B98      		cbi 37-32,3
+ 416 0256 2B9A      		sbi 37-32,3
+ 417 0258 FBB9      		out 43-32,r31
+ 418 025a 2B98      		cbi 37-32,3
+ 419 025c 2B9A      		sbi 37-32,3
+ 420               	.LM52:
+ 421 025e 1BB9      		out 43-32,r17
+ 422 0260 2B98      		cbi 37-32,3
+ 423 0262 2B9A      		sbi 37-32,3
+ 424 0264 0BB9      		out 43-32,r16
+ 425 0266 2B98      		cbi 37-32,3
+ 426 0268 2B9A      		sbi 37-32,3
+ 427               	.LM53:
+ 428 026a 2C98      		cbi 37-32,4
+ 429 026c 8BE2      		ldi r24,lo8(43)
+ 430 026e 8BB9      		out 43-32,r24
+ 431 0270 2B98      		cbi 37-32,3
+ 432 0272 2B9A      		sbi 37-32,3
+ 433 0274 2C9A      		sbi 37-32,4
+ 434               	.LM54:
+ 435 0276 2BB9      		out 43-32,r18
+ 436 0278 2B98      		cbi 37-32,3
+ 437 027a 2B9A      		sbi 37-32,3
+ 438 027c 3BB9      		out 43-32,r19
+ 439 027e 2B98      		cbi 37-32,3
+ 440 0280 2B9A      		sbi 37-32,3
+ 441               	.LM55:
+ 442 0282 7BB9      		out 43-32,r23
+ 443 0284 2B98      		cbi 37-32,3
+ 444 0286 2B9A      		sbi 37-32,3
+ 445 0288 6BB9      		out 43-32,r22
+ 446 028a 2B98      		cbi 37-32,3
+ 447 028c 2B9A      		sbi 37-32,3
+ 448               	.LM56:
+ 449 028e 2C98      		cbi 37-32,4
+ 450 0290 8CE2      		ldi r24,lo8(44)
+ 451 0292 8BB9      		out 43-32,r24
+ 452 0294 2B98      		cbi 37-32,3
+ 453 0296 2B9A      		sbi 37-32,3
+ 454 0298 2C9A      		sbi 37-32,4
+ 455 029a 2F2F      		mov r18,r31
+ 456               	.LVL18:
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 9
+
+
+ 457 029c 3E2F      		mov r19,r30
+ 458               	.LVL19:
+ 459 029e C901      		movw r24,r18
+ 460               	.LVL20:
+ 461 02a0 AC01      		movw r20,r24
+ 462               	.LVL21:
+ 463 02a2 00C0      		rjmp .L21
+ 464               	.LVL22:
+ 465               	.L22:
+ 466               	.LM57:
+ 467 02a4 1196      		adiw r26,1
+ 468 02a6 8C91      		ld r24,X
+ 469 02a8 1197      		sbiw r26,1
+ 470 02aa 8BB9      		out 43-32,r24
+ 471 02ac 2B98      		cbi 37-32,3
+ 472 02ae 2B9A      		sbi 37-32,3
+ 473 02b0 1296      		adiw r26,2
+ 474 02b2 8C91      		ld r24,X
+ 475 02b4 1297      		sbiw r26,2
+ 476 02b6 8BB9      		out 43-32,r24
+ 477               	.LM58:
+ 478 02b8 1496      		adiw r26,4
+ 479               	.LM59:
+ 480 02ba 2B98      		cbi 37-32,3
+ 481 02bc 2B9A      		sbi 37-32,3
+ 482               	.LM60:
+ 483 02be 2F5F      		subi r18,lo8(-(1))
+ 484 02c0 3F4F      		sbci r19,hi8(-(1))
+ 485               	.LVL23:
+ 486               	.L24:
+ 487 02c2 6217      		cp r22,r18
+ 488 02c4 7307      		cpc r23,r19
+ 489 02c6 00F4      		brsh .L22
+ 490               	.LM61:
+ 491 02c8 4F5F      		subi r20,lo8(-(1))
+ 492 02ca 5F4F      		sbci r21,hi8(-(1))
+ 493               	.LVL24:
+ 494               	.L21:
+ 495 02cc 0417      		cp r16,r20
+ 496 02ce 1507      		cpc r17,r21
+ 497 02d0 00F0      		brlo .L25
+ 498 02d2 9701      		movw r18,r14
+ 499               	.LVL25:
+ 500 02d4 00C0      		rjmp .L24
+ 501               	.LVL26:
+ 502               	.L25:
+ 503               	/* epilogue start */
+ 504               	.LM62:
+ 505 02d6 2896      		adiw r28,8
+ 506 02d8 0FB6      		in __tmp_reg__,__SREG__
+ 507 02da F894      		cli
+ 508 02dc DEBF      		out __SP_H__,r29
+ 509 02de 0FBE      		out __SREG__,__tmp_reg__
+ 510 02e0 CDBF      		out __SP_L__,r28
+ 511 02e2 CF91      		pop r28
+ 512 02e4 DF91      		pop r29
+ 513 02e6 1F91      		pop r17
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 10
+
+
+ 514 02e8 0F91      		pop r16
+ 515 02ea FF90      		pop r15
+ 516 02ec EF90      		pop r14
+ 517 02ee 0895      		ret
+ 518               	.LFE8:
+ 519               		.size	fill_rectangle_indexed, .-fill_rectangle_indexed
+ 520               	.global	clear_screen
+ 521               		.type	clear_screen, @function
+ 522               	clear_screen:
+ 523               	.LFB9:
+ 524               	.LM63:
+ 525 02f0 0F93      		push r16
+ 526 02f2 1F93      		push r17
+ 527 02f4 DF93      		push r29
+ 528 02f6 CF93      		push r28
+ 529 02f8 CDB7      		in r28,__SP_L__
+ 530 02fa DEB7      		in r29,__SP_H__
+ 531 02fc 2897      		sbiw r28,8
+ 532 02fe 0FB6      		in __tmp_reg__,__SREG__
+ 533 0300 F894      		cli
+ 534 0302 DEBF      		out __SP_H__,r29
+ 535 0304 0FBE      		out __SREG__,__tmp_reg__
+ 536 0306 CDBF      		out __SP_L__,r28
+ 537               	/* prologue: function */
+ 538               	/* frame size = 8 */
+ 539               	.LM64:
+ 540 0308 1092 0000 		sts (display+6)+1,__zero_reg__
+ 541 030c 1092 0000 		sts display+6,__zero_reg__
+ 542               	.LM65:
+ 543 0310 1092 0000 		sts (display+8)+1,__zero_reg__
+ 544 0314 1092 0000 		sts display+8,__zero_reg__
+ 545               	.LM66:
+ 546 0318 2091 0000 		lds r18,display
+ 547 031c 3091 0000 		lds r19,(display)+1
+ 548 0320 2150      		subi r18,lo8(-(-1))
+ 549 0322 3040      		sbci r19,hi8(-(-1))
+ 550 0324 8091 0000 		lds r24,display+2
+ 551 0328 9091 0000 		lds r25,(display+2)+1
+ 552 032c 0197      		sbiw r24,1
+ 553 032e 1A82      		std Y+2,__zero_reg__
+ 554 0330 1982      		std Y+1,__zero_reg__
+ 555 0332 422F      		mov r20,r18
+ 556 0334 3C83      		std Y+4,r19
+ 557 0336 2B83      		std Y+3,r18
+ 558 0338 1E82      		std Y+6,__zero_reg__
+ 559 033a 1D82      		std Y+5,__zero_reg__
+ 560 033c 9887      		std Y+8,r25
+ 561 033e 8F83      		std Y+7,r24
+ 562               	.LM67:
+ 563 0340 0091 0000 		lds r16,display+12
+ 564 0344 1091 0000 		lds r17,(display+12)+1
+ 565 0348 2981      		ldd r18,Y+1
+ 566 034a 3A81      		ldd r19,Y+2
+ 567 034c 5C81      		ldd r21,Y+4
+ 568 034e 6D81      		ldd r22,Y+5
+ 569 0350 7E81      		ldd r23,Y+6
+ 570 0352 9885      		ldd r25,Y+8
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 11
+
+
+ 571 0354 0E94 0000 		call fill_rectangle
+ 572               	/* epilogue start */
+ 573               	.LM68:
+ 574 0358 2896      		adiw r28,8
+ 575 035a 0FB6      		in __tmp_reg__,__SREG__
+ 576 035c F894      		cli
+ 577 035e DEBF      		out __SP_H__,r29
+ 578 0360 0FBE      		out __SREG__,__tmp_reg__
+ 579 0362 CDBF      		out __SP_L__,r28
+ 580 0364 CF91      		pop r28
+ 581 0366 DF91      		pop r29
+ 582 0368 1F91      		pop r17
+ 583 036a 0F91      		pop r16
+ 584 036c 0895      		ret
+ 585               	.LFE9:
+ 586               		.size	clear_screen, .-clear_screen
+ 587               	.global	display_char
+ 588               		.type	display_char, @function
+ 589               	display_char:
+ 590               	.LFB10:
+ 591               	.LM69:
+ 592               	.LVL27:
+ 593 036e 6F92      		push r6
+ 594 0370 7F92      		push r7
+ 595 0372 8F92      		push r8
+ 596 0374 9F92      		push r9
+ 597 0376 AF92      		push r10
+ 598 0378 BF92      		push r11
+ 599 037a CF92      		push r12
+ 600 037c DF92      		push r13
+ 601 037e EF92      		push r14
+ 602 0380 FF92      		push r15
+ 603 0382 0F93      		push r16
+ 604 0384 1F93      		push r17
+ 605 0386 CF93      		push r28
+ 606 0388 DF93      		push r29
+ 607               	/* prologue: function */
+ 608               	/* frame size = 0 */
+ 609 038a 982F      		mov r25,r24
+ 610               	.LM70:
+ 611 038c 0091 0000 		lds r16,display+6
+ 612 0390 1091 0000 		lds r17,(display+6)+1
+ 613               	.LVL28:
+ 614 0394 24E0      		ldi r18,lo8(4)
+ 615 0396 E22E      		mov r14,r18
+ 616 0398 F12C      		mov r15,__zero_reg__
+ 617               	.LVL29:
+ 618 039a E00E      		add r14,r16
+ 619 039c F11E      		adc r15,r17
+ 620 039e 6090 0000 		lds r6,display+8
+ 621 03a2 7090 0000 		lds r7,(display+8)+1
+ 622               	.LVL30:
+ 623               	.LM71:
+ 624 03a6 8052      		subi r24,lo8(-(-32))
+ 625               	.LVL31:
+ 626 03a8 8F35      		cpi r24,lo8(95)
+ 627 03aa 00F0      		brlo .+2
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 12
+
+
+ 628 03ac 00C0      		rjmp .L40
+ 629               	.LM72:
+ 630 03ae E301      		movw r28,r6
+ 631               	.LVL32:
+ 632 03b0 2796      		adiw r28,7
+ 633               	.LM73:
+ 634 03b2 85E0      		ldi r24,lo8(5)
+ 635 03b4 989F      		mul r25,r24
+ 636 03b6 9001      		movw r18,r0
+ 637 03b8 1124      		clr r1
+ 638               	.LVL33:
+ 639 03ba 2050      		subi r18,lo8(-(font5x7-160))
+ 640 03bc 3040      		sbci r19,hi8(-(font5x7-160))
+ 641               	.LM74:
+ 642 03be 2C98      		cbi 37-32,4
+ 643 03c0 8BE2      		ldi r24,lo8(43)
+ 644 03c2 8BB9      		out 43-32,r24
+ 645 03c4 2B98      		cbi 37-32,3
+ 646 03c6 2B9A      		sbi 37-32,3
+ 647 03c8 2C9A      		sbi 37-32,4
+ 648               	.LM75:
+ 649 03ca 7BB8      		out 43-32,r7
+ 650               	.LVL34:
+ 651 03cc 2B98      		cbi 37-32,3
+ 652 03ce 2B9A      		sbi 37-32,3
+ 653 03d0 6BB8      		out 43-32,r6
+ 654 03d2 2B98      		cbi 37-32,3
+ 655 03d4 2B9A      		sbi 37-32,3
+ 656               	.LM76:
+ 657 03d6 DBB9      		out 43-32,r29
+ 658               	.LVL35:
+ 659 03d8 2B98      		cbi 37-32,3
+ 660 03da 2B9A      		sbi 37-32,3
+ 661 03dc CBB9      		out 43-32,r28
+ 662 03de 2B98      		cbi 37-32,3
+ 663 03e0 2B9A      		sbi 37-32,3
+ 664               	.LM77:
+ 665 03e2 C090 0000 		lds r12,display+10
+ 666 03e6 D090 0000 		lds r13,display+11
+ 667 03ea A090 0000 		lds r10,display+12
+ 668 03ee B090 0000 		lds r11,display+13
+ 669 03f2 A801      		movw r20,r16
+ 670               	.LVL36:
+ 671               	.LM78:
+ 672 03f4 9AE2      		ldi r25,lo8(42)
+ 673 03f6 892E      		mov r8,r25
+ 674               	.LVL37:
+ 675               	.LM79:
+ 676 03f8 8CE2      		ldi r24,lo8(44)
+ 677 03fa 982E      		mov r9,r24
+ 678 03fc 00C0      		rjmp .L30
+ 679               	.LVL38:
+ 680               	.L37:
+ 681               	.LM80:
+ 682 03fe 2C98      		cbi 37-32,4
+ 683 0400 8BB8      		out 43-32,r8
+ 684 0402 2B98      		cbi 37-32,3
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 13
+
+
+ 685 0404 2B9A      		sbi 37-32,3
+ 686 0406 2C9A      		sbi 37-32,4
+ 687               	.LM81:
+ 688 0408 5BB9      		out 43-32,r21
+ 689 040a 2B98      		cbi 37-32,3
+ 690 040c 2B9A      		sbi 37-32,3
+ 691 040e 4BB9      		out 43-32,r20
+ 692 0410 2B98      		cbi 37-32,3
+ 693 0412 2B9A      		sbi 37-32,3
+ 694               	.LM82:
+ 695 0414 5BB9      		out 43-32,r21
+ 696 0416 2B98      		cbi 37-32,3
+ 697 0418 2B9A      		sbi 37-32,3
+ 698 041a 4BB9      		out 43-32,r20
+ 699 041c 2B98      		cbi 37-32,3
+ 700 041e 2B9A      		sbi 37-32,3
+ 701               	.LM83:
+ 702 0420 2C98      		cbi 37-32,4
+ 703 0422 9BB8      		out 43-32,r9
+ 704 0424 2B98      		cbi 37-32,3
+ 705 0426 2B9A      		sbi 37-32,3
+ 706 0428 2C9A      		sbi 37-32,4
+ 707               	.LBB2:
+ 708               	.LM84:
+ 709 042a F901      		movw r30,r18
+ 710               	/* #APP */
+ 711               	 ;  124 "lcd.c" 1
+ 712 042c B491      		lpm r27, Z
+ 713               		
+ 714               	 ;  0 "" 2
+ 715               	/* #NOAPP */
+ 716 042e B301      		movw r22,r6
+ 717 0430 91E0      		ldi r25,lo8(1)
+ 718 0432 00C0      		rjmp .L31
+ 719               	.L36:
+ 720               	.LBE2:
+ 721               	.LM85:
+ 722 0434 A92F      		mov r26,r25
+ 723 0436 AB23      		and r26,r27
+ 724 0438 01F4      		brne .L32
+ 725 043a 8B2D      		mov r24,r11
+ 726 043c 00C0      		rjmp .L33
+ 727               	.L32:
+ 728 043e 8D2D      		mov r24,r13
+ 729               	.L33:
+ 730 0440 8BB9      		out 43-32,r24
+ 731 0442 2B98      		cbi 37-32,3
+ 732 0444 2B9A      		sbi 37-32,3
+ 733 0446 AA23      		tst r26
+ 734 0448 01F4      		brne .L34
+ 735 044a 8A2D      		mov r24,r10
+ 736 044c 00C0      		rjmp .L35
+ 737               	.L34:
+ 738 044e 8C2D      		mov r24,r12
+ 739               	.L35:
+ 740 0450 8BB9      		out 43-32,r24
+ 741 0452 2B98      		cbi 37-32,3
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 14
+
+
+ 742 0454 2B9A      		sbi 37-32,3
+ 743               	.LM86:
+ 744 0456 6F5F      		subi r22,lo8(-(1))
+ 745 0458 7F4F      		sbci r23,hi8(-(1))
+ 746 045a 990F      		lsl r25
+ 747               	.L31:
+ 748 045c C617      		cp r28,r22
+ 749 045e D707      		cpc r29,r23
+ 750 0460 00F4      		brsh .L36
+ 751               	.LBB3:
+ 752               	.LM87:
+ 753 0462 2F5F      		subi r18,lo8(-(1))
+ 754 0464 3F4F      		sbci r19,hi8(-(1))
+ 755               	.LBE3:
+ 756               	.LM88:
+ 757 0466 4F5F      		subi r20,lo8(-(1))
+ 758 0468 5F4F      		sbci r21,hi8(-(1))
+ 759               	.L30:
+ 760 046a E416      		cp r14,r20
+ 761 046c F506      		cpc r15,r21
+ 762 046e 00F4      		brsh .L37
+ 763               	.LM89:
+ 764 0470 2C98      		cbi 37-32,4
+ 765 0472 8AE2      		ldi r24,lo8(42)
+ 766 0474 8BB9      		out 43-32,r24
+ 767 0476 2B98      		cbi 37-32,3
+ 768 0478 2B9A      		sbi 37-32,3
+ 769 047a 2C9A      		sbi 37-32,4
+ 770               	.LM90:
+ 771 047c 5BB9      		out 43-32,r21
+ 772 047e 2B98      		cbi 37-32,3
+ 773 0480 2B9A      		sbi 37-32,3
+ 774 0482 4BB9      		out 43-32,r20
+ 775 0484 2B98      		cbi 37-32,3
+ 776 0486 2B9A      		sbi 37-32,3
+ 777               	.LM91:
+ 778 0488 5BB9      		out 43-32,r21
+ 779 048a 2B98      		cbi 37-32,3
+ 780 048c 2B9A      		sbi 37-32,3
+ 781 048e 4BB9      		out 43-32,r20
+ 782 0490 2B98      		cbi 37-32,3
+ 783 0492 2B9A      		sbi 37-32,3
+ 784               	.LM92:
+ 785 0494 2C98      		cbi 37-32,4
+ 786 0496 8CE2      		ldi r24,lo8(44)
+ 787 0498 8BB9      		out 43-32,r24
+ 788 049a 2B98      		cbi 37-32,3
+ 789 049c 2B9A      		sbi 37-32,3
+ 790 049e 2C9A      		sbi 37-32,4
+ 791 04a0 C301      		movw r24,r6
+ 792               	.LVL39:
+ 793 04a2 00C0      		rjmp .L38
+ 794               	.L39:
+ 795               	.LM93:
+ 796 04a4 BBB8      		out 43-32,r11
+ 797 04a6 2B98      		cbi 37-32,3
+ 798 04a8 2B9A      		sbi 37-32,3
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 15
+
+
+ 799 04aa ABB8      		out 43-32,r10
+ 800 04ac 2B98      		cbi 37-32,3
+ 801 04ae 2B9A      		sbi 37-32,3
+ 802               	.LM94:
+ 803 04b0 0196      		adiw r24,1
+ 804               	.L38:
+ 805 04b2 C817      		cp r28,r24
+ 806 04b4 D907      		cpc r29,r25
+ 807 04b6 00F4      		brsh .L39
+ 808               	.LM95:
+ 809 04b8 9801      		movw r18,r16
+ 810               	.LVL40:
+ 811 04ba 2A5F      		subi r18,lo8(-(6))
+ 812 04bc 3F4F      		sbci r19,hi8(-(6))
+ 813 04be 3093 0000 		sts (display+6)+1,r19
+ 814 04c2 2093 0000 		sts display+6,r18
+ 815               	.LM96:
+ 816 04c6 8091 0000 		lds r24,display
+ 817 04ca 9091 0000 		lds r25,(display)+1
+ 818               	.LVL41:
+ 819 04ce 2817      		cp r18,r24
+ 820 04d0 3907      		cpc r19,r25
+ 821 04d2 00F0      		brlo .L40
+ 822 04d4 1092 0000 		sts (display+6)+1,__zero_reg__
+ 823 04d8 1092 0000 		sts display+6,__zero_reg__
+ 824 04dc 88E0      		ldi r24,lo8(8)
+ 825 04de 90E0      		ldi r25,hi8(8)
+ 826 04e0 680E      		add r6,r24
+ 827 04e2 791E      		adc r7,r25
+ 828 04e4 7092 0000 		sts (display+8)+1,r7
+ 829 04e8 6092 0000 		sts display+8,r6
+ 830               	.LVL42:
+ 831               	.L40:
+ 832               	/* epilogue start */
+ 833               	.LM97:
+ 834 04ec DF91      		pop r29
+ 835               	.LVL43:
+ 836 04ee CF91      		pop r28
+ 837               	.LVL44:
+ 838 04f0 1F91      		pop r17
+ 839 04f2 0F91      		pop r16
+ 840               	.LVL45:
+ 841 04f4 FF90      		pop r15
+ 842 04f6 EF90      		pop r14
+ 843               	.LVL46:
+ 844 04f8 DF90      		pop r13
+ 845 04fa CF90      		pop r12
+ 846 04fc BF90      		pop r11
+ 847 04fe AF90      		pop r10
+ 848 0500 9F90      		pop r9
+ 849 0502 8F90      		pop r8
+ 850 0504 7F90      		pop r7
+ 851               	.LVL47:
+ 852 0506 6F90      		pop r6
+ 853               	.LVL48:
+ 854 0508 0895      		ret
+ 855               	.LFE10:
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 16
+
+
+ 856               		.size	display_char, .-display_char
+ 857               	.global	display_string
+ 858               		.type	display_string, @function
+ 859               	display_string:
+ 860               	.LFB11:
+ 861               	.LM98:
+ 862               	.LVL49:
+ 863 050a 1F93      		push r17
+ 864 050c CF93      		push r28
+ 865 050e DF93      		push r29
+ 866               	/* prologue: function */
+ 867               	/* frame size = 0 */
+ 868 0510 EC01      		movw r28,r24
+ 869               	.LM99:
+ 870 0512 10E0      		ldi r17,lo8(0)
+ 871               	.LVL50:
+ 872 0514 00C0      		rjmp .L42
+ 873               	.LVL51:
+ 874               	.L43:
+ 875               	.LM100:
+ 876 0516 0E94 0000 		call display_char
+ 877               	.LM101:
+ 878 051a 1F5F      		subi r17,lo8(-(1))
+ 879               	.LVL52:
+ 880               	.L42:
+ 881 051c FE01      		movw r30,r28
+ 882 051e E10F      		add r30,r17
+ 883 0520 F11D      		adc r31,__zero_reg__
+ 884 0522 8081      		ld r24,Z
+ 885 0524 8823      		tst r24
+ 886 0526 01F4      		brne .L43
+ 887               	/* epilogue start */
+ 888               	.LM102:
+ 889 0528 DF91      		pop r29
+ 890 052a CF91      		pop r28
+ 891               	.LVL53:
+ 892 052c 1F91      		pop r17
+ 893               	.LVL54:
+ 894 052e 0895      		ret
+ 895               	.LFE11:
+ 896               		.size	display_string, .-display_string
+ 897               	.global	init_lcd
+ 898               		.type	init_lcd, @function
+ 899               	init_lcd:
+ 900               	.LFB2:
+ 901               	.LM103:
+ 902               	/* prologue: function */
+ 903               	/* frame size = 0 */
+ 904               	.LM104:
+ 905 0530 85B7      		in r24,85-32
+ 906 0532 8068      		ori r24,lo8(-128)
+ 907 0534 85BF      		out 85-32,r24
+ 908               	.LM105:
+ 909 0536 85B7      		in r24,85-32
+ 910 0538 8068      		ori r24,lo8(-128)
+ 911 053a 85BF      		out 85-32,r24
+ 912               	.LM106:
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 17
+
+
+ 913 053c 8FE7      		ldi r24,lo8(127)
+ 914 053e 84B9      		out 36-32,r24
+ 915               	.LM107:
+ 916 0540 8FEF      		ldi r24,lo8(-1)
+ 917 0542 8AB9      		out 42-32,r24
+ 918               	.LM108:
+ 919 0544 0E94 0000 		call init_display_controller
+ 920               	/* epilogue start */
+ 921               	.LM109:
+ 922 0548 0895      		ret
+ 923               	.LFE2:
+ 924               		.size	init_lcd, .-init_lcd
+ 925               	.global	display
+ 926               		.data
+ 927               		.type	display, @object
+ 928               		.size	display, 14
+ 929               	display:
+ 930 0000 F000      		.word	240
+ 931 0002 4001      		.word	320
+ 932 0004 0000      		.word	0
+ 933 0006 0000      		.word	0
+ 934 0008 0000      		.word	0
+ 935 000a FFFF      		.word	-1
+ 936 000c 0000      		.word	0
+ 937               		.section	.debug_frame,"",@progbits
+ 938               	.Lframe0:
+ 939 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 940               	.LSCIE0:
+ 941 0004 FFFF FFFF 		.long	0xffffffff
+ 942 0008 01        		.byte	0x1
+ 943 0009 00        		.string	""
+ 944 000a 01        		.uleb128 0x1
+ 945 000b 7F        		.sleb128 -1
+ 946 000c 24        		.byte	0x24
+ 947 000d 0C        		.byte	0xc
+ 948 000e 20        		.uleb128 0x20
+ 949 000f 00        		.uleb128 0x0
+ 950               		.p2align	2
+ 951               	.LECIE0:
+ 952               	.LSFDE0:
+ 953 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 954               	.LASFDE0:
+ 955 0014 0000 0000 		.long	.Lframe0
+ 956 0018 0000 0000 		.long	.LFB3
+ 957 001c 0801 0000 		.long	.LFE3-.LFB3
+ 958               		.p2align	2
+ 959               	.LEFDE0:
+ 960               	.LSFDE2:
+ 961 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 962               	.LASFDE2:
+ 963 0024 0000 0000 		.long	.Lframe0
+ 964 0028 0000 0000 		.long	.LFB4
+ 965 002c 0A00 0000 		.long	.LFE4-.LFB4
+ 966               		.p2align	2
+ 967               	.LEFDE2:
+ 968               	.LSFDE4:
+ 969 0030 0C00 0000 		.long	.LEFDE4-.LASFDE4
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 18
+
+
+ 970               	.LASFDE4:
+ 971 0034 0000 0000 		.long	.Lframe0
+ 972 0038 0000 0000 		.long	.LFB5
+ 973 003c 0A00 0000 		.long	.LFE5-.LFB5
+ 974               		.p2align	2
+ 975               	.LEFDE4:
+ 976               	.LSFDE6:
+ 977 0040 0C00 0000 		.long	.LEFDE6-.LASFDE6
+ 978               	.LASFDE6:
+ 979 0044 0000 0000 		.long	.Lframe0
+ 980 0048 0000 0000 		.long	.LFB6
+ 981 004c 0A00 0000 		.long	.LFE6-.LFB6
+ 982               		.p2align	2
+ 983               	.LEFDE6:
+ 984               	.LSFDE8:
+ 985 0050 0C00 0000 		.long	.LEFDE8-.LASFDE8
+ 986               	.LASFDE8:
+ 987 0054 0000 0000 		.long	.Lframe0
+ 988 0058 0000 0000 		.long	.LFB7
+ 989 005c DE00 0000 		.long	.LFE7-.LFB7
+ 990               		.p2align	2
+ 991               	.LEFDE8:
+ 992               	.LSFDE10:
+ 993 0060 0C00 0000 		.long	.LEFDE10-.LASFDE10
+ 994               	.LASFDE10:
+ 995 0064 0000 0000 		.long	.Lframe0
+ 996 0068 0000 0000 		.long	.LFB8
+ 997 006c EC00 0000 		.long	.LFE8-.LFB8
+ 998               		.p2align	2
+ 999               	.LEFDE10:
+ 1000               	.LSFDE12:
+ 1001 0070 0C00 0000 		.long	.LEFDE12-.LASFDE12
+ 1002               	.LASFDE12:
+ 1003 0074 0000 0000 		.long	.Lframe0
+ 1004 0078 0000 0000 		.long	.LFB9
+ 1005 007c 7E00 0000 		.long	.LFE9-.LFB9
+ 1006               		.p2align	2
+ 1007               	.LEFDE12:
+ 1008               	.LSFDE14:
+ 1009 0080 0C00 0000 		.long	.LEFDE14-.LASFDE14
+ 1010               	.LASFDE14:
+ 1011 0084 0000 0000 		.long	.Lframe0
+ 1012 0088 0000 0000 		.long	.LFB10
+ 1013 008c 9C01 0000 		.long	.LFE10-.LFB10
+ 1014               		.p2align	2
+ 1015               	.LEFDE14:
+ 1016               	.LSFDE16:
+ 1017 0090 0C00 0000 		.long	.LEFDE16-.LASFDE16
+ 1018               	.LASFDE16:
+ 1019 0094 0000 0000 		.long	.Lframe0
+ 1020 0098 0000 0000 		.long	.LFB11
+ 1021 009c 2600 0000 		.long	.LFE11-.LFB11
+ 1022               		.p2align	2
+ 1023               	.LEFDE16:
+ 1024               	.LSFDE18:
+ 1025 00a0 0C00 0000 		.long	.LEFDE18-.LASFDE18
+ 1026               	.LASFDE18:
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 19
+
+
+ 1027 00a4 0000 0000 		.long	.Lframe0
+ 1028 00a8 0000 0000 		.long	.LFB2
+ 1029 00ac 1A00 0000 		.long	.LFE2-.LFB2
+ 1030               		.p2align	2
+ 1031               	.LEFDE18:
+ 1032               		.text
+ 1033               	.Letext0:
+ 1034               		.section	.debug_loc,"",@progbits
+ 1035               	.Ldebug_loc0:
+ 1036               	.LLST1:
+ 1037 0000 0000 0000 		.long	.LVL0-.Ltext0
+ 1038 0004 0E00 0000 		.long	.LVL1-.Ltext0
+ 1039 0008 0600      		.word	0x6
+ 1040 000a 68        		.byte	0x68
+ 1041 000b 93        		.byte	0x93
+ 1042 000c 01        		.uleb128 0x1
+ 1043 000d 69        		.byte	0x69
+ 1044 000e 93        		.byte	0x93
+ 1045 000f 01        		.uleb128 0x1
+ 1046 0010 0E00 0000 		.long	.LVL1-.Ltext0
+ 1047 0014 0801 0000 		.long	.LFE3-.Ltext0
+ 1048 0018 0600      		.word	0x6
+ 1049 001a 62        		.byte	0x62
+ 1050 001b 93        		.byte	0x93
+ 1051 001c 01        		.uleb128 0x1
+ 1052 001d 63        		.byte	0x63
+ 1053 001e 93        		.byte	0x93
+ 1054 001f 01        		.uleb128 0x1
+ 1055 0020 0000 0000 		.long	0x0
+ 1056 0024 0000 0000 		.long	0x0
+ 1057               	.LLST6:
+ 1058 0028 2601 0000 		.long	.LVL2-.Ltext0
+ 1059 002c 2C01 0000 		.long	.LVL3-.Ltext0
+ 1060 0030 0600      		.word	0x6
+ 1061 0032 60        		.byte	0x60
+ 1062 0033 93        		.byte	0x93
+ 1063 0034 01        		.uleb128 0x1
+ 1064 0035 61        		.byte	0x61
+ 1065 0036 93        		.byte	0x93
+ 1066 0037 01        		.uleb128 0x1
+ 1067 0038 C601 0000 		.long	.LVL8-.Ltext0
+ 1068 003c 0002 0000 		.long	.LVL12-.Ltext0
+ 1069 0040 0600      		.word	0x6
+ 1070 0042 5E        		.byte	0x5e
+ 1071 0043 93        		.byte	0x93
+ 1072 0044 01        		.uleb128 0x1
+ 1073 0045 5F        		.byte	0x5f
+ 1074 0046 93        		.byte	0x93
+ 1075 0047 01        		.uleb128 0x1
+ 1076 0048 0000 0000 		.long	0x0
+ 1077 004c 0000 0000 		.long	0x0
+ 1078               	.LLST7:
+ 1079 0050 C001 0000 		.long	.LVL5-.Ltext0
+ 1080 0054 C201 0000 		.long	.LVL6-.Ltext0
+ 1081 0058 0600      		.word	0x6
+ 1082 005a 62        		.byte	0x62
+ 1083 005b 93        		.byte	0x93
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 20
+
+
+ 1084 005c 01        		.uleb128 0x1
+ 1085 005d 63        		.byte	0x63
+ 1086 005e 93        		.byte	0x93
+ 1087 005f 01        		.uleb128 0x1
+ 1088 0060 C401 0000 		.long	.LVL7-.Ltext0
+ 1089 0064 C601 0000 		.long	.LVL8-.Ltext0
+ 1090 0068 0600      		.word	0x6
+ 1091 006a 68        		.byte	0x68
+ 1092 006b 93        		.byte	0x93
+ 1093 006c 01        		.uleb128 0x1
+ 1094 006d 69        		.byte	0x69
+ 1095 006e 93        		.byte	0x93
+ 1096 006f 01        		.uleb128 0x1
+ 1097 0070 C601 0000 		.long	.LVL8-.Ltext0
+ 1098 0074 0402 0000 		.long	.LFE7-.Ltext0
+ 1099 0078 0600      		.word	0x6
+ 1100 007a 64        		.byte	0x64
+ 1101 007b 93        		.byte	0x93
+ 1102 007c 01        		.uleb128 0x1
+ 1103 007d 65        		.byte	0x65
+ 1104 007e 93        		.byte	0x93
+ 1105 007f 01        		.uleb128 0x1
+ 1106 0080 0000 0000 		.long	0x0
+ 1107 0084 0000 0000 		.long	0x0
+ 1108               	.LLST8:
+ 1109 0088 C601 0000 		.long	.LVL8-.Ltext0
+ 1110 008c E801 0000 		.long	.LVL10-.Ltext0
+ 1111 0090 0600      		.word	0x6
+ 1112 0092 62        		.byte	0x62
+ 1113 0093 93        		.byte	0x93
+ 1114 0094 01        		.uleb128 0x1
+ 1115 0095 63        		.byte	0x63
+ 1116 0096 93        		.byte	0x93
+ 1117 0097 01        		.uleb128 0x1
+ 1118 0098 EA01 0000 		.long	.LVL11-.Ltext0
+ 1119 009c 0402 0000 		.long	.LFE7-.Ltext0
+ 1120 00a0 0600      		.word	0x6
+ 1121 00a2 62        		.byte	0x62
+ 1122 00a3 93        		.byte	0x93
+ 1123 00a4 01        		.uleb128 0x1
+ 1124 00a5 63        		.byte	0x63
+ 1125 00a6 93        		.byte	0x93
+ 1126 00a7 01        		.uleb128 0x1
+ 1127 00a8 0000 0000 		.long	0x0
+ 1128 00ac 0000 0000 		.long	0x0
+ 1129               	.LLST10:
+ 1130 00b0 0402 0000 		.long	.LVL14-.Ltext0
+ 1131 00b4 0A02 0000 		.long	.LVL15-.Ltext0
+ 1132 00b8 0600      		.word	0x6
+ 1133 00ba 60        		.byte	0x60
+ 1134 00bb 93        		.byte	0x93
+ 1135 00bc 01        		.uleb128 0x1
+ 1136 00bd 61        		.byte	0x61
+ 1137 00be 93        		.byte	0x93
+ 1138 00bf 01        		.uleb128 0x1
+ 1139 00c0 3A02 0000 		.long	.LVL16-.Ltext0
+ 1140 00c4 3E02 0000 		.long	.LVL17-.Ltext0
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 21
+
+
+ 1141 00c8 0600      		.word	0x6
+ 1142 00ca 60        		.byte	0x60
+ 1143 00cb 93        		.byte	0x93
+ 1144 00cc 01        		.uleb128 0x1
+ 1145 00cd 61        		.byte	0x61
+ 1146 00ce 93        		.byte	0x93
+ 1147 00cf 01        		.uleb128 0x1
+ 1148 00d0 3E02 0000 		.long	.LVL17-.Ltext0
+ 1149 00d4 F002 0000 		.long	.LFE8-.Ltext0
+ 1150 00d8 0600      		.word	0x6
+ 1151 00da 6A        		.byte	0x6a
+ 1152 00db 93        		.byte	0x93
+ 1153 00dc 01        		.uleb128 0x1
+ 1154 00dd 6B        		.byte	0x6b
+ 1155 00de 93        		.byte	0x93
+ 1156 00df 01        		.uleb128 0x1
+ 1157 00e0 0000 0000 		.long	0x0
+ 1158 00e4 0000 0000 		.long	0x0
+ 1159               	.LLST11:
+ 1160 00e8 9E02 0000 		.long	.LVL19-.Ltext0
+ 1161 00ec A002 0000 		.long	.LVL20-.Ltext0
+ 1162 00f0 0600      		.word	0x6
+ 1163 00f2 62        		.byte	0x62
+ 1164 00f3 93        		.byte	0x93
+ 1165 00f4 01        		.uleb128 0x1
+ 1166 00f5 63        		.byte	0x63
+ 1167 00f6 93        		.byte	0x93
+ 1168 00f7 01        		.uleb128 0x1
+ 1169 00f8 A202 0000 		.long	.LVL21-.Ltext0
+ 1170 00fc A402 0000 		.long	.LVL22-.Ltext0
+ 1171 0100 0600      		.word	0x6
+ 1172 0102 68        		.byte	0x68
+ 1173 0103 93        		.byte	0x93
+ 1174 0104 01        		.uleb128 0x1
+ 1175 0105 69        		.byte	0x69
+ 1176 0106 93        		.byte	0x93
+ 1177 0107 01        		.uleb128 0x1
+ 1178 0108 A402 0000 		.long	.LVL22-.Ltext0
+ 1179 010c F002 0000 		.long	.LFE8-.Ltext0
+ 1180 0110 0600      		.word	0x6
+ 1181 0112 64        		.byte	0x64
+ 1182 0113 93        		.byte	0x93
+ 1183 0114 01        		.uleb128 0x1
+ 1184 0115 65        		.byte	0x65
+ 1185 0116 93        		.byte	0x93
+ 1186 0117 01        		.uleb128 0x1
+ 1187 0118 0000 0000 		.long	0x0
+ 1188 011c 0000 0000 		.long	0x0
+ 1189               	.LLST12:
+ 1190 0120 A402 0000 		.long	.LVL22-.Ltext0
+ 1191 0124 D402 0000 		.long	.LVL25-.Ltext0
+ 1192 0128 0600      		.word	0x6
+ 1193 012a 62        		.byte	0x62
+ 1194 012b 93        		.byte	0x93
+ 1195 012c 01        		.uleb128 0x1
+ 1196 012d 63        		.byte	0x63
+ 1197 012e 93        		.byte	0x93
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 22
+
+
+ 1198 012f 01        		.uleb128 0x1
+ 1199 0130 D602 0000 		.long	.LVL26-.Ltext0
+ 1200 0134 F002 0000 		.long	.LFE8-.Ltext0
+ 1201 0138 0600      		.word	0x6
+ 1202 013a 62        		.byte	0x62
+ 1203 013b 93        		.byte	0x93
+ 1204 013c 01        		.uleb128 0x1
+ 1205 013d 63        		.byte	0x63
+ 1206 013e 93        		.byte	0x93
+ 1207 013f 01        		.uleb128 0x1
+ 1208 0140 0000 0000 		.long	0x0
+ 1209 0144 0000 0000 		.long	0x0
+ 1210               	.LLST15:
+ 1211 0148 6E03 0000 		.long	.LVL27-.Ltext0
+ 1212 014c A803 0000 		.long	.LVL31-.Ltext0
+ 1213 0150 0100      		.word	0x1
+ 1214 0152 68        		.byte	0x68
+ 1215 0153 A803 0000 		.long	.LVL31-.Ltext0
+ 1216 0157 F803 0000 		.long	.LVL37-.Ltext0
+ 1217 015b 0100      		.word	0x1
+ 1218 015d 69        		.byte	0x69
+ 1219 015e EC04 0000 		.long	.LVL42-.Ltext0
+ 1220 0162 0A05 0000 		.long	.LFE10-.Ltext0
+ 1221 0166 0100      		.word	0x1
+ 1222 0168 69        		.byte	0x69
+ 1223 0169 0000 0000 		.long	0x0
+ 1224 016d 0000 0000 		.long	0x0
+ 1225               	.LLST16:
+ 1226 0171 FE03 0000 		.long	.LVL38-.Ltext0
+ 1227 0175 A204 0000 		.long	.LVL39-.Ltext0
+ 1228 0179 0600      		.word	0x6
+ 1229 017b 66        		.byte	0x66
+ 1230 017c 93        		.byte	0x93
+ 1231 017d 01        		.uleb128 0x1
+ 1232 017e 67        		.byte	0x67
+ 1233 017f 93        		.byte	0x93
+ 1234 0180 01        		.uleb128 0x1
+ 1235 0181 A204 0000 		.long	.LVL39-.Ltext0
+ 1236 0185 CE04 0000 		.long	.LVL41-.Ltext0
+ 1237 0189 0600      		.word	0x6
+ 1238 018b 68        		.byte	0x68
+ 1239 018c 93        		.byte	0x93
+ 1240 018d 01        		.uleb128 0x1
+ 1241 018e 69        		.byte	0x69
+ 1242 018f 93        		.byte	0x93
+ 1243 0190 01        		.uleb128 0x1
+ 1244 0191 0000 0000 		.long	0x0
+ 1245 0195 0000 0000 		.long	0x0
+ 1246               	.LLST17:
+ 1247 0199 BA03 0000 		.long	.LVL33-.Ltext0
+ 1248 019d BA04 0000 		.long	.LVL40-.Ltext0
+ 1249 01a1 0600      		.word	0x6
+ 1250 01a3 62        		.byte	0x62
+ 1251 01a4 93        		.byte	0x93
+ 1252 01a5 01        		.uleb128 0x1
+ 1253 01a6 63        		.byte	0x63
+ 1254 01a7 93        		.byte	0x93
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 23
+
+
+ 1255 01a8 01        		.uleb128 0x1
+ 1256 01a9 0000 0000 		.long	0x0
+ 1257 01ad 0000 0000 		.long	0x0
+ 1258               	.LLST18:
+ 1259 01b1 9403 0000 		.long	.LVL28-.Ltext0
+ 1260 01b5 F404 0000 		.long	.LVL45-.Ltext0
+ 1261 01b9 0600      		.word	0x6
+ 1262 01bb 60        		.byte	0x60
+ 1263 01bc 93        		.byte	0x93
+ 1264 01bd 01        		.uleb128 0x1
+ 1265 01be 61        		.byte	0x61
+ 1266 01bf 93        		.byte	0x93
+ 1267 01c0 01        		.uleb128 0x1
+ 1268 01c1 0000 0000 		.long	0x0
+ 1269 01c5 0000 0000 		.long	0x0
+ 1270               	.LLST19:
+ 1271 01c9 9A03 0000 		.long	.LVL29-.Ltext0
+ 1272 01cd F804 0000 		.long	.LVL46-.Ltext0
+ 1273 01d1 0600      		.word	0x6
+ 1274 01d3 5E        		.byte	0x5e
+ 1275 01d4 93        		.byte	0x93
+ 1276 01d5 01        		.uleb128 0x1
+ 1277 01d6 5F        		.byte	0x5f
+ 1278 01d7 93        		.byte	0x93
+ 1279 01d8 01        		.uleb128 0x1
+ 1280 01d9 0000 0000 		.long	0x0
+ 1281 01dd 0000 0000 		.long	0x0
+ 1282               	.LLST20:
+ 1283 01e1 A603 0000 		.long	.LVL30-.Ltext0
+ 1284 01e5 0805 0000 		.long	.LVL48-.Ltext0
+ 1285 01e9 0600      		.word	0x6
+ 1286 01eb 56        		.byte	0x56
+ 1287 01ec 93        		.byte	0x93
+ 1288 01ed 01        		.uleb128 0x1
+ 1289 01ee 57        		.byte	0x57
+ 1290 01ef 93        		.byte	0x93
+ 1291 01f0 01        		.uleb128 0x1
+ 1292 01f1 0000 0000 		.long	0x0
+ 1293 01f5 0000 0000 		.long	0x0
+ 1294               	.LLST21:
+ 1295 01f9 B003 0000 		.long	.LVL32-.Ltext0
+ 1296 01fd F004 0000 		.long	.LVL44-.Ltext0
+ 1297 0201 0600      		.word	0x6
+ 1298 0203 6C        		.byte	0x6c
+ 1299 0204 93        		.byte	0x93
+ 1300 0205 01        		.uleb128 0x1
+ 1301 0206 6D        		.byte	0x6d
+ 1302 0207 93        		.byte	0x93
+ 1303 0208 01        		.uleb128 0x1
+ 1304 0209 0000 0000 		.long	0x0
+ 1305 020d 0000 0000 		.long	0x0
+ 1306               	.LLST23:
+ 1307 0211 0A05 0000 		.long	.LVL49-.Ltext0
+ 1308 0215 1605 0000 		.long	.LVL51-.Ltext0
+ 1309 0219 0600      		.word	0x6
+ 1310 021b 68        		.byte	0x68
+ 1311 021c 93        		.byte	0x93
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 24
+
+
+ 1312 021d 01        		.uleb128 0x1
+ 1313 021e 69        		.byte	0x69
+ 1314 021f 93        		.byte	0x93
+ 1315 0220 01        		.uleb128 0x1
+ 1316 0221 1605 0000 		.long	.LVL51-.Ltext0
+ 1317 0225 2C05 0000 		.long	.LVL53-.Ltext0
+ 1318 0229 0600      		.word	0x6
+ 1319 022b 6C        		.byte	0x6c
+ 1320 022c 93        		.byte	0x93
+ 1321 022d 01        		.uleb128 0x1
+ 1322 022e 6D        		.byte	0x6d
+ 1323 022f 93        		.byte	0x93
+ 1324 0230 01        		.uleb128 0x1
+ 1325 0231 0000 0000 		.long	0x0
+ 1326 0235 0000 0000 		.long	0x0
+ 1327               	.LLST24:
+ 1328 0239 1405 0000 		.long	.LVL50-.Ltext0
+ 1329 023d 2E05 0000 		.long	.LVL54-.Ltext0
+ 1330 0241 0100      		.word	0x1
+ 1331 0243 61        		.byte	0x61
+ 1332 0244 0000 0000 		.long	0x0
+ 1333 0248 0000 0000 		.long	0x0
+ 1334               		.section	.debug_info
+ 1335 0000 E803 0000 		.long	0x3e8
+ 1336 0004 0200      		.word	0x2
+ 1337 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 1338 000a 04        		.byte	0x4
+ 1339 000b 01        		.uleb128 0x1
+ 1340 000c 0000 0000 		.long	.LASF40
+ 1341 0010 01        		.byte	0x1
+ 1342 0011 0000 0000 		.long	.LASF41
+ 1343 0015 0000 0000 		.long	.LASF42
+ 1344 0019 0000 0000 		.long	.Ltext0
+ 1345 001d 0000 0000 		.long	.Letext0
+ 1346 0021 0000 0000 		.long	.Ldebug_line0
+ 1347 0025 02        		.uleb128 0x2
+ 1348 0026 01        		.byte	0x1
+ 1349 0027 06        		.byte	0x6
+ 1350 0028 0000 0000 		.long	.LASF0
+ 1351 002c 03        		.uleb128 0x3
+ 1352 002d 0000 0000 		.long	.LASF2
+ 1353 0031 02        		.byte	0x2
+ 1354 0032 7A        		.byte	0x7a
+ 1355 0033 3700 0000 		.long	0x37
+ 1356 0037 02        		.uleb128 0x2
+ 1357 0038 01        		.byte	0x1
+ 1358 0039 08        		.byte	0x8
+ 1359 003a 0000 0000 		.long	.LASF1
+ 1360 003e 04        		.uleb128 0x4
+ 1361 003f 02        		.byte	0x2
+ 1362 0040 05        		.byte	0x5
+ 1363 0041 696E 7400 		.string	"int"
+ 1364 0045 03        		.uleb128 0x3
+ 1365 0046 0000 0000 		.long	.LASF3
+ 1366 004a 02        		.byte	0x2
+ 1367 004b 7C        		.byte	0x7c
+ 1368 004c 5000 0000 		.long	0x50
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 25
+
+
+ 1369 0050 02        		.uleb128 0x2
+ 1370 0051 02        		.byte	0x2
+ 1371 0052 07        		.byte	0x7
+ 1372 0053 0000 0000 		.long	.LASF4
+ 1373 0057 02        		.uleb128 0x2
+ 1374 0058 04        		.byte	0x4
+ 1375 0059 05        		.byte	0x5
+ 1376 005a 0000 0000 		.long	.LASF5
+ 1377 005e 02        		.uleb128 0x2
+ 1378 005f 04        		.byte	0x4
+ 1379 0060 07        		.byte	0x7
+ 1380 0061 0000 0000 		.long	.LASF6
+ 1381 0065 02        		.uleb128 0x2
+ 1382 0066 08        		.byte	0x8
+ 1383 0067 05        		.byte	0x5
+ 1384 0068 0000 0000 		.long	.LASF7
+ 1385 006c 02        		.uleb128 0x2
+ 1386 006d 08        		.byte	0x8
+ 1387 006e 07        		.byte	0x7
+ 1388 006f 0000 0000 		.long	.LASF8
+ 1389 0073 03        		.uleb128 0x3
+ 1390 0074 0000 0000 		.long	.LASF9
+ 1391 0078 03        		.byte	0x3
+ 1392 0079 D4        		.byte	0xd4
+ 1393 007a 7E00 0000 		.long	0x7e
+ 1394 007e 05        		.uleb128 0x5
+ 1395 007f 01        		.byte	0x1
+ 1396 0080 08        		.byte	0x8
+ 1397 0081 06        		.uleb128 0x6
+ 1398 0082 02        		.byte	0x2
+ 1399 0083 04        		.byte	0x4
+ 1400 0084 15        		.byte	0x15
+ 1401 0085 A200 0000 		.long	0xa2
+ 1402 0089 07        		.uleb128 0x7
+ 1403 008a 0000 0000 		.long	.LASF10
+ 1404 008e 00        		.sleb128 0
+ 1405 008f 07        		.uleb128 0x7
+ 1406 0090 0000 0000 		.long	.LASF11
+ 1407 0094 01        		.sleb128 1
+ 1408 0095 07        		.uleb128 0x7
+ 1409 0096 0000 0000 		.long	.LASF12
+ 1410 009a 02        		.sleb128 2
+ 1411 009b 07        		.uleb128 0x7
+ 1412 009c 0000 0000 		.long	.LASF13
+ 1413 00a0 03        		.sleb128 3
+ 1414 00a1 00        		.byte	0x0
+ 1415 00a2 03        		.uleb128 0x3
+ 1416 00a3 0000 0000 		.long	.LASF14
+ 1417 00a7 04        		.byte	0x4
+ 1418 00a8 15        		.byte	0x15
+ 1419 00a9 8100 0000 		.long	0x81
+ 1420 00ad 08        		.uleb128 0x8
+ 1421 00ae 0E        		.byte	0xe
+ 1422 00af 04        		.byte	0x4
+ 1423 00b0 17        		.byte	0x17
+ 1424 00b1 1401 0000 		.long	0x114
+ 1425 00b5 09        		.uleb128 0x9
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 26
+
+
+ 1426 00b6 0000 0000 		.long	.LASF15
+ 1427 00ba 04        		.byte	0x4
+ 1428 00bb 18        		.byte	0x18
+ 1429 00bc 4500 0000 		.long	0x45
+ 1430 00c0 02        		.byte	0x2
+ 1431 00c1 23        		.byte	0x23
+ 1432 00c2 00        		.uleb128 0x0
+ 1433 00c3 09        		.uleb128 0x9
+ 1434 00c4 0000 0000 		.long	.LASF16
+ 1435 00c8 04        		.byte	0x4
+ 1436 00c9 18        		.byte	0x18
+ 1437 00ca 4500 0000 		.long	0x45
+ 1438 00ce 02        		.byte	0x2
+ 1439 00cf 23        		.byte	0x23
+ 1440 00d0 02        		.uleb128 0x2
+ 1441 00d1 09        		.uleb128 0x9
+ 1442 00d2 0000 0000 		.long	.LASF17
+ 1443 00d6 04        		.byte	0x4
+ 1444 00d7 19        		.byte	0x19
+ 1445 00d8 A200 0000 		.long	0xa2
+ 1446 00dc 02        		.byte	0x2
+ 1447 00dd 23        		.byte	0x23
+ 1448 00de 04        		.uleb128 0x4
+ 1449 00df 0A        		.uleb128 0xa
+ 1450 00e0 7800      		.string	"x"
+ 1451 00e2 04        		.byte	0x4
+ 1452 00e3 1A        		.byte	0x1a
+ 1453 00e4 4500 0000 		.long	0x45
+ 1454 00e8 02        		.byte	0x2
+ 1455 00e9 23        		.byte	0x23
+ 1456 00ea 06        		.uleb128 0x6
+ 1457 00eb 0A        		.uleb128 0xa
+ 1458 00ec 7900      		.string	"y"
+ 1459 00ee 04        		.byte	0x4
+ 1460 00ef 1A        		.byte	0x1a
+ 1461 00f0 4500 0000 		.long	0x45
+ 1462 00f4 02        		.byte	0x2
+ 1463 00f5 23        		.byte	0x23
+ 1464 00f6 08        		.uleb128 0x8
+ 1465 00f7 09        		.uleb128 0x9
+ 1466 00f8 0000 0000 		.long	.LASF18
+ 1467 00fc 04        		.byte	0x4
+ 1468 00fd 1B        		.byte	0x1b
+ 1469 00fe 4500 0000 		.long	0x45
+ 1470 0102 02        		.byte	0x2
+ 1471 0103 23        		.byte	0x23
+ 1472 0104 0A        		.uleb128 0xa
+ 1473 0105 09        		.uleb128 0x9
+ 1474 0106 0000 0000 		.long	.LASF19
+ 1475 010a 04        		.byte	0x4
+ 1476 010b 1B        		.byte	0x1b
+ 1477 010c 4500 0000 		.long	0x45
+ 1478 0110 02        		.byte	0x2
+ 1479 0111 23        		.byte	0x23
+ 1480 0112 0C        		.uleb128 0xc
+ 1481 0113 00        		.byte	0x0
+ 1482 0114 0B        		.uleb128 0xb
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 27
+
+
+ 1483 0115 6C63 6400 		.string	"lcd"
+ 1484 0119 04        		.byte	0x4
+ 1485 011a 1C        		.byte	0x1c
+ 1486 011b AD00 0000 		.long	0xad
+ 1487 011f 08        		.uleb128 0x8
+ 1488 0120 08        		.byte	0x8
+ 1489 0121 04        		.byte	0x4
+ 1490 0122 20        		.byte	0x20
+ 1491 0123 6001 0000 		.long	0x160
+ 1492 0127 09        		.uleb128 0x9
+ 1493 0128 0000 0000 		.long	.LASF20
+ 1494 012c 04        		.byte	0x4
+ 1495 012d 21        		.byte	0x21
+ 1496 012e 4500 0000 		.long	0x45
+ 1497 0132 02        		.byte	0x2
+ 1498 0133 23        		.byte	0x23
+ 1499 0134 00        		.uleb128 0x0
+ 1500 0135 09        		.uleb128 0x9
+ 1501 0136 0000 0000 		.long	.LASF21
+ 1502 013a 04        		.byte	0x4
+ 1503 013b 21        		.byte	0x21
+ 1504 013c 4500 0000 		.long	0x45
+ 1505 0140 02        		.byte	0x2
+ 1506 0141 23        		.byte	0x23
+ 1507 0142 02        		.uleb128 0x2
+ 1508 0143 0A        		.uleb128 0xa
+ 1509 0144 746F 7000 		.string	"top"
+ 1510 0148 04        		.byte	0x4
+ 1511 0149 22        		.byte	0x22
+ 1512 014a 4500 0000 		.long	0x45
+ 1513 014e 02        		.byte	0x2
+ 1514 014f 23        		.byte	0x23
+ 1515 0150 04        		.uleb128 0x4
+ 1516 0151 09        		.uleb128 0x9
+ 1517 0152 0000 0000 		.long	.LASF22
+ 1518 0156 04        		.byte	0x4
+ 1519 0157 22        		.byte	0x22
+ 1520 0158 4500 0000 		.long	0x45
+ 1521 015c 02        		.byte	0x2
+ 1522 015d 23        		.byte	0x23
+ 1523 015e 06        		.uleb128 0x6
+ 1524 015f 00        		.byte	0x0
+ 1525 0160 03        		.uleb128 0x3
+ 1526 0161 0000 0000 		.long	.LASF23
+ 1527 0165 04        		.byte	0x4
+ 1528 0166 23        		.byte	0x23
+ 1529 0167 1F01 0000 		.long	0x11f
+ 1530 016b 0C        		.uleb128 0xc
+ 1531 016c 01        		.byte	0x1
+ 1532 016d 0000 0000 		.long	.LASF27
+ 1533 0171 01        		.byte	0x1
+ 1534 0172 1B        		.byte	0x1b
+ 1535 0173 01        		.byte	0x1
+ 1536 0174 0000 0000 		.long	.LFB3
+ 1537 0178 0000 0000 		.long	.LFE3
+ 1538 017c 02        		.byte	0x2
+ 1539 017d 90        		.byte	0x90
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 28
+
+
+ 1540 017e 20        		.uleb128 0x20
+ 1541 017f 9101 0000 		.long	0x191
+ 1542 0183 0D        		.uleb128 0xd
+ 1543 0184 6F00      		.string	"o"
+ 1544 0186 01        		.byte	0x1
+ 1545 0187 1A        		.byte	0x1a
+ 1546 0188 A200 0000 		.long	0xa2
+ 1547 018c 0000 0000 		.long	.LLST1
+ 1548 0190 00        		.byte	0x0
+ 1549 0191 0E        		.uleb128 0xe
+ 1550 0192 01        		.byte	0x1
+ 1551 0193 0000 0000 		.long	.LASF24
+ 1552 0197 01        		.byte	0x1
+ 1553 0198 3A        		.byte	0x3a
+ 1554 0199 A200 0000 		.long	0xa2
+ 1555 019d 0000 0000 		.long	.LFB4
+ 1556 01a1 0000 0000 		.long	.LFE4
+ 1557 01a5 02        		.byte	0x2
+ 1558 01a6 90        		.byte	0x90
+ 1559 01a7 20        		.uleb128 0x20
+ 1560 01a8 0E        		.uleb128 0xe
+ 1561 01a9 01        		.byte	0x1
+ 1562 01aa 0000 0000 		.long	.LASF25
+ 1563 01ae 01        		.byte	0x1
+ 1564 01af 3E        		.byte	0x3e
+ 1565 01b0 4500 0000 		.long	0x45
+ 1566 01b4 0000 0000 		.long	.LFB5
+ 1567 01b8 0000 0000 		.long	.LFE5
+ 1568 01bc 02        		.byte	0x2
+ 1569 01bd 90        		.byte	0x90
+ 1570 01be 20        		.uleb128 0x20
+ 1571 01bf 0E        		.uleb128 0xe
+ 1572 01c0 01        		.byte	0x1
+ 1573 01c1 0000 0000 		.long	.LASF26
+ 1574 01c5 01        		.byte	0x1
+ 1575 01c6 42        		.byte	0x42
+ 1576 01c7 4500 0000 		.long	0x45
+ 1577 01cb 0000 0000 		.long	.LFB6
+ 1578 01cf 0000 0000 		.long	.LFE6
+ 1579 01d3 02        		.byte	0x2
+ 1580 01d4 90        		.byte	0x90
+ 1581 01d5 20        		.uleb128 0x20
+ 1582 01d6 0C        		.uleb128 0xc
+ 1583 01d7 01        		.byte	0x1
+ 1584 01d8 0000 0000 		.long	.LASF28
+ 1585 01dc 01        		.byte	0x1
+ 1586 01dd 47        		.byte	0x47
+ 1587 01de 01        		.byte	0x1
+ 1588 01df 0000 0000 		.long	.LFB7
+ 1589 01e3 0000 0000 		.long	.LFE7
+ 1590 01e7 02        		.byte	0x2
+ 1591 01e8 90        		.byte	0x90
+ 1592 01e9 20        		.uleb128 0x20
+ 1593 01ea 2402 0000 		.long	0x224
+ 1594 01ee 0F        		.uleb128 0xf
+ 1595 01ef 7200      		.string	"r"
+ 1596 01f1 01        		.byte	0x1
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 29
+
+
+ 1597 01f2 46        		.byte	0x46
+ 1598 01f3 6001 0000 		.long	0x160
+ 1599 01f7 02        		.byte	0x2
+ 1600 01f8 8C        		.byte	0x8c
+ 1601 01f9 01        		.sleb128 1
+ 1602 01fa 0D        		.uleb128 0xd
+ 1603 01fb 636F 6C00 		.string	"col"
+ 1604 01ff 01        		.byte	0x1
+ 1605 0200 46        		.byte	0x46
+ 1606 0201 4500 0000 		.long	0x45
+ 1607 0205 0000 0000 		.long	.LLST6
+ 1608 0209 10        		.uleb128 0x10
+ 1609 020a 7800      		.string	"x"
+ 1610 020c 01        		.byte	0x1
+ 1611 020d 48        		.byte	0x48
+ 1612 020e 4500 0000 		.long	0x45
+ 1613 0212 0000 0000 		.long	.LLST7
+ 1614 0216 10        		.uleb128 0x10
+ 1615 0217 7900      		.string	"y"
+ 1616 0219 01        		.byte	0x1
+ 1617 021a 48        		.byte	0x48
+ 1618 021b 4500 0000 		.long	0x45
+ 1619 021f 0000 0000 		.long	.LLST8
+ 1620 0223 00        		.byte	0x0
+ 1621 0224 0C        		.uleb128 0xc
+ 1622 0225 01        		.byte	0x1
+ 1623 0226 0000 0000 		.long	.LASF29
+ 1624 022a 01        		.byte	0x1
+ 1625 022b 56        		.byte	0x56
+ 1626 022c 01        		.byte	0x1
+ 1627 022d 0000 0000 		.long	.LFB8
+ 1628 0231 0000 0000 		.long	.LFE8
+ 1629 0235 02        		.byte	0x2
+ 1630 0236 90        		.byte	0x90
+ 1631 0237 20        		.uleb128 0x20
+ 1632 0238 7202 0000 		.long	0x272
+ 1633 023c 0F        		.uleb128 0xf
+ 1634 023d 7200      		.string	"r"
+ 1635 023f 01        		.byte	0x1
+ 1636 0240 55        		.byte	0x55
+ 1637 0241 6001 0000 		.long	0x160
+ 1638 0245 02        		.byte	0x2
+ 1639 0246 8C        		.byte	0x8c
+ 1640 0247 01        		.sleb128 1
+ 1641 0248 0D        		.uleb128 0xd
+ 1642 0249 636F 6C00 		.string	"col"
+ 1643 024d 01        		.byte	0x1
+ 1644 024e 55        		.byte	0x55
+ 1645 024f 7202 0000 		.long	0x272
+ 1646 0253 0000 0000 		.long	.LLST10
+ 1647 0257 10        		.uleb128 0x10
+ 1648 0258 7800      		.string	"x"
+ 1649 025a 01        		.byte	0x1
+ 1650 025b 57        		.byte	0x57
+ 1651 025c 4500 0000 		.long	0x45
+ 1652 0260 0000 0000 		.long	.LLST11
+ 1653 0264 10        		.uleb128 0x10
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 30
+
+
+ 1654 0265 7900      		.string	"y"
+ 1655 0267 01        		.byte	0x1
+ 1656 0268 57        		.byte	0x57
+ 1657 0269 4500 0000 		.long	0x45
+ 1658 026d 0000 0000 		.long	.LLST12
+ 1659 0271 00        		.byte	0x0
+ 1660 0272 11        		.uleb128 0x11
+ 1661 0273 02        		.byte	0x2
+ 1662 0274 4500 0000 		.long	0x45
+ 1663 0278 12        		.uleb128 0x12
+ 1664 0279 01        		.byte	0x1
+ 1665 027a 0000 0000 		.long	.LASF43
+ 1666 027e 01        		.byte	0x1
+ 1667 027f 65        		.byte	0x65
+ 1668 0280 0000 0000 		.long	.LFB9
+ 1669 0284 0000 0000 		.long	.LFE9
+ 1670 0288 02        		.byte	0x2
+ 1671 0289 90        		.byte	0x90
+ 1672 028a 20        		.uleb128 0x20
+ 1673 028b 9C02 0000 		.long	0x29c
+ 1674 028f 13        		.uleb128 0x13
+ 1675 0290 7200      		.string	"r"
+ 1676 0292 01        		.byte	0x1
+ 1677 0293 68        		.byte	0x68
+ 1678 0294 6001 0000 		.long	0x160
+ 1679 0298 02        		.byte	0x2
+ 1680 0299 8C        		.byte	0x8c
+ 1681 029a 01        		.sleb128 1
+ 1682 029b 00        		.byte	0x0
+ 1683 029c 0C        		.uleb128 0xc
+ 1684 029d 01        		.byte	0x1
+ 1685 029e 0000 0000 		.long	.LASF30
+ 1686 02a2 01        		.byte	0x1
+ 1687 02a3 6D        		.byte	0x6d
+ 1688 02a4 01        		.byte	0x1
+ 1689 02a5 0000 0000 		.long	.LFB10
+ 1690 02a9 0000 0000 		.long	.LFE10
+ 1691 02ad 02        		.byte	0x2
+ 1692 02ae 90        		.byte	0x90
+ 1693 02af 20        		.uleb128 0x20
+ 1694 02b0 5C03 0000 		.long	0x35c
+ 1695 02b4 0D        		.uleb128 0xd
+ 1696 02b5 6300      		.string	"c"
+ 1697 02b7 01        		.byte	0x1
+ 1698 02b8 6C        		.byte	0x6c
+ 1699 02b9 5C03 0000 		.long	0x35c
+ 1700 02bd 0000 0000 		.long	.LLST15
+ 1701 02c1 13        		.uleb128 0x13
+ 1702 02c2 7800      		.string	"x"
+ 1703 02c4 01        		.byte	0x1
+ 1704 02c5 6E        		.byte	0x6e
+ 1705 02c6 4500 0000 		.long	0x45
+ 1706 02ca 06        		.byte	0x6
+ 1707 02cb 64        		.byte	0x64
+ 1708 02cc 93        		.byte	0x93
+ 1709 02cd 01        		.uleb128 0x1
+ 1710 02ce 65        		.byte	0x65
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 31
+
+
+ 1711 02cf 93        		.byte	0x93
+ 1712 02d0 01        		.uleb128 0x1
+ 1713 02d1 10        		.uleb128 0x10
+ 1714 02d2 7900      		.string	"y"
+ 1715 02d4 01        		.byte	0x1
+ 1716 02d5 6E        		.byte	0x6e
+ 1717 02d6 4500 0000 		.long	0x45
+ 1718 02da 0000 0000 		.long	.LLST16
+ 1719 02de 14        		.uleb128 0x14
+ 1720 02df 0000 0000 		.long	.LASF31
+ 1721 02e3 01        		.byte	0x1
+ 1722 02e4 6F        		.byte	0x6f
+ 1723 02e5 6303 0000 		.long	0x363
+ 1724 02e9 0000 0000 		.long	.LLST17
+ 1725 02ed 15        		.uleb128 0x15
+ 1726 02ee 0000 0000 		.long	.LASF33
+ 1727 02f2 01        		.byte	0x1
+ 1728 02f3 70        		.byte	0x70
+ 1729 02f4 2C00 0000 		.long	0x2c
+ 1730 02f8 16        		.uleb128 0x16
+ 1731 02f9 0000 0000 		.long	.LASF32
+ 1732 02fd 01        		.byte	0x1
+ 1733 02fe 70        		.byte	0x70
+ 1734 02ff 2C00 0000 		.long	0x2c
+ 1735 0303 01        		.byte	0x1
+ 1736 0304 69        		.byte	0x69
+ 1737 0305 10        		.uleb128 0x10
+ 1738 0306 7363 00   		.string	"sc"
+ 1739 0309 01        		.byte	0x1
+ 1740 030a 71        		.byte	0x71
+ 1741 030b 4500 0000 		.long	0x45
+ 1742 030f 0000 0000 		.long	.LLST18
+ 1743 0313 10        		.uleb128 0x10
+ 1744 0314 6563 00   		.string	"ec"
+ 1745 0317 01        		.byte	0x1
+ 1746 0318 71        		.byte	0x71
+ 1747 0319 4500 0000 		.long	0x45
+ 1748 031d 0000 0000 		.long	.LLST19
+ 1749 0321 10        		.uleb128 0x10
+ 1750 0322 7370 00   		.string	"sp"
+ 1751 0325 01        		.byte	0x1
+ 1752 0326 71        		.byte	0x71
+ 1753 0327 4500 0000 		.long	0x45
+ 1754 032b 0000 0000 		.long	.LLST20
+ 1755 032f 10        		.uleb128 0x10
+ 1756 0330 6570 00   		.string	"ep"
+ 1757 0333 01        		.byte	0x1
+ 1758 0334 71        		.byte	0x71
+ 1759 0335 4500 0000 		.long	0x45
+ 1760 0339 0000 0000 		.long	.LLST21
+ 1761 033d 17        		.uleb128 0x17
+ 1762 033e 0000 0000 		.long	.Ldebug_ranges0+0x0
+ 1763 0342 15        		.uleb128 0x15
+ 1764 0343 0000 0000 		.long	.LASF34
+ 1765 0347 01        		.byte	0x1
+ 1766 0348 7C        		.byte	0x7c
+ 1767 0349 4500 0000 		.long	0x45
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 32
+
+
+ 1768 034d 16        		.uleb128 0x16
+ 1769 034e 0000 0000 		.long	.LASF35
+ 1770 0352 01        		.byte	0x1
+ 1771 0353 7C        		.byte	0x7c
+ 1772 0354 2C00 0000 		.long	0x2c
+ 1773 0358 01        		.byte	0x1
+ 1774 0359 6B        		.byte	0x6b
+ 1775 035a 00        		.byte	0x0
+ 1776 035b 00        		.byte	0x0
+ 1777 035c 02        		.uleb128 0x2
+ 1778 035d 01        		.byte	0x1
+ 1779 035e 08        		.byte	0x8
+ 1780 035f 0000 0000 		.long	.LASF36
+ 1781 0363 11        		.uleb128 0x11
+ 1782 0364 02        		.byte	0x2
+ 1783 0365 6903 0000 		.long	0x369
+ 1784 0369 18        		.uleb128 0x18
+ 1785 036a 7300 0000 		.long	0x73
+ 1786 036e 0C        		.uleb128 0xc
+ 1787 036f 01        		.byte	0x1
+ 1788 0370 0000 0000 		.long	.LASF37
+ 1789 0374 01        		.byte	0x1
+ 1790 0375 8C        		.byte	0x8c
+ 1791 0376 01        		.byte	0x1
+ 1792 0377 0000 0000 		.long	.LFB11
+ 1793 037b 0000 0000 		.long	.LFE11
+ 1794 037f 02        		.byte	0x2
+ 1795 0380 90        		.byte	0x90
+ 1796 0381 20        		.uleb128 0x20
+ 1797 0382 A303 0000 		.long	0x3a3
+ 1798 0386 0D        		.uleb128 0xd
+ 1799 0387 7374 7200 		.string	"str"
+ 1800 038b 01        		.byte	0x1
+ 1801 038c 8B        		.byte	0x8b
+ 1802 038d A303 0000 		.long	0x3a3
+ 1803 0391 0000 0000 		.long	.LLST23
+ 1804 0395 10        		.uleb128 0x10
+ 1805 0396 6900      		.string	"i"
+ 1806 0398 01        		.byte	0x1
+ 1807 0399 8D        		.byte	0x8d
+ 1808 039a 2C00 0000 		.long	0x2c
+ 1809 039e 0000 0000 		.long	.LLST24
+ 1810 03a2 00        		.byte	0x0
+ 1811 03a3 11        		.uleb128 0x11
+ 1812 03a4 02        		.byte	0x2
+ 1813 03a5 5C03 0000 		.long	0x35c
+ 1814 03a9 19        		.uleb128 0x19
+ 1815 03aa 01        		.byte	0x1
+ 1816 03ab 0000 0000 		.long	.LASF44
+ 1817 03af 01        		.byte	0x1
+ 1818 03b0 0D        		.byte	0xd
+ 1819 03b1 0000 0000 		.long	.LFB2
+ 1820 03b5 0000 0000 		.long	.LFE2
+ 1821 03b9 02        		.byte	0x2
+ 1822 03ba 90        		.byte	0x90
+ 1823 03bb 20        		.uleb128 0x20
+ 1824 03bc 1A        		.uleb128 0x1a
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 33
+
+
+ 1825 03bd 2C00 0000 		.long	0x2c
+ 1826 03c1 C703 0000 		.long	0x3c7
+ 1827 03c5 1B        		.uleb128 0x1b
+ 1828 03c6 00        		.byte	0x0
+ 1829 03c7 1C        		.uleb128 0x1c
+ 1830 03c8 0000 0000 		.long	.LASF38
+ 1831 03cc 05        		.byte	0x5
+ 1832 03cd 0C        		.byte	0xc
+ 1833 03ce D403 0000 		.long	0x3d4
+ 1834 03d2 01        		.byte	0x1
+ 1835 03d3 01        		.byte	0x1
+ 1836 03d4 18        		.uleb128 0x18
+ 1837 03d5 BC03 0000 		.long	0x3bc
+ 1838 03d9 1D        		.uleb128 0x1d
+ 1839 03da 0000 0000 		.long	.LASF39
+ 1840 03de 01        		.byte	0x1
+ 1841 03df 0A        		.byte	0xa
+ 1842 03e0 1401 0000 		.long	0x114
+ 1843 03e4 01        		.byte	0x1
+ 1844 03e5 05        		.byte	0x5
+ 1845 03e6 03        		.byte	0x3
+ 1846 03e7 0000 0000 		.long	display
+ 1847 03eb 00        		.byte	0x0
+ 1848               		.section	.debug_abbrev
+ 1849 0000 01        		.uleb128 0x1
+ 1850 0001 11        		.uleb128 0x11
+ 1851 0002 01        		.byte	0x1
+ 1852 0003 25        		.uleb128 0x25
+ 1853 0004 0E        		.uleb128 0xe
+ 1854 0005 13        		.uleb128 0x13
+ 1855 0006 0B        		.uleb128 0xb
+ 1856 0007 03        		.uleb128 0x3
+ 1857 0008 0E        		.uleb128 0xe
+ 1858 0009 1B        		.uleb128 0x1b
+ 1859 000a 0E        		.uleb128 0xe
+ 1860 000b 11        		.uleb128 0x11
+ 1861 000c 01        		.uleb128 0x1
+ 1862 000d 12        		.uleb128 0x12
+ 1863 000e 01        		.uleb128 0x1
+ 1864 000f 10        		.uleb128 0x10
+ 1865 0010 06        		.uleb128 0x6
+ 1866 0011 00        		.byte	0x0
+ 1867 0012 00        		.byte	0x0
+ 1868 0013 02        		.uleb128 0x2
+ 1869 0014 24        		.uleb128 0x24
+ 1870 0015 00        		.byte	0x0
+ 1871 0016 0B        		.uleb128 0xb
+ 1872 0017 0B        		.uleb128 0xb
+ 1873 0018 3E        		.uleb128 0x3e
+ 1874 0019 0B        		.uleb128 0xb
+ 1875 001a 03        		.uleb128 0x3
+ 1876 001b 0E        		.uleb128 0xe
+ 1877 001c 00        		.byte	0x0
+ 1878 001d 00        		.byte	0x0
+ 1879 001e 03        		.uleb128 0x3
+ 1880 001f 16        		.uleb128 0x16
+ 1881 0020 00        		.byte	0x0
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 34
+
+
+ 1882 0021 03        		.uleb128 0x3
+ 1883 0022 0E        		.uleb128 0xe
+ 1884 0023 3A        		.uleb128 0x3a
+ 1885 0024 0B        		.uleb128 0xb
+ 1886 0025 3B        		.uleb128 0x3b
+ 1887 0026 0B        		.uleb128 0xb
+ 1888 0027 49        		.uleb128 0x49
+ 1889 0028 13        		.uleb128 0x13
+ 1890 0029 00        		.byte	0x0
+ 1891 002a 00        		.byte	0x0
+ 1892 002b 04        		.uleb128 0x4
+ 1893 002c 24        		.uleb128 0x24
+ 1894 002d 00        		.byte	0x0
+ 1895 002e 0B        		.uleb128 0xb
+ 1896 002f 0B        		.uleb128 0xb
+ 1897 0030 3E        		.uleb128 0x3e
+ 1898 0031 0B        		.uleb128 0xb
+ 1899 0032 03        		.uleb128 0x3
+ 1900 0033 08        		.uleb128 0x8
+ 1901 0034 00        		.byte	0x0
+ 1902 0035 00        		.byte	0x0
+ 1903 0036 05        		.uleb128 0x5
+ 1904 0037 24        		.uleb128 0x24
+ 1905 0038 00        		.byte	0x0
+ 1906 0039 0B        		.uleb128 0xb
+ 1907 003a 0B        		.uleb128 0xb
+ 1908 003b 3E        		.uleb128 0x3e
+ 1909 003c 0B        		.uleb128 0xb
+ 1910 003d 00        		.byte	0x0
+ 1911 003e 00        		.byte	0x0
+ 1912 003f 06        		.uleb128 0x6
+ 1913 0040 04        		.uleb128 0x4
+ 1914 0041 01        		.byte	0x1
+ 1915 0042 0B        		.uleb128 0xb
+ 1916 0043 0B        		.uleb128 0xb
+ 1917 0044 3A        		.uleb128 0x3a
+ 1918 0045 0B        		.uleb128 0xb
+ 1919 0046 3B        		.uleb128 0x3b
+ 1920 0047 0B        		.uleb128 0xb
+ 1921 0048 01        		.uleb128 0x1
+ 1922 0049 13        		.uleb128 0x13
+ 1923 004a 00        		.byte	0x0
+ 1924 004b 00        		.byte	0x0
+ 1925 004c 07        		.uleb128 0x7
+ 1926 004d 28        		.uleb128 0x28
+ 1927 004e 00        		.byte	0x0
+ 1928 004f 03        		.uleb128 0x3
+ 1929 0050 0E        		.uleb128 0xe
+ 1930 0051 1C        		.uleb128 0x1c
+ 1931 0052 0D        		.uleb128 0xd
+ 1932 0053 00        		.byte	0x0
+ 1933 0054 00        		.byte	0x0
+ 1934 0055 08        		.uleb128 0x8
+ 1935 0056 13        		.uleb128 0x13
+ 1936 0057 01        		.byte	0x1
+ 1937 0058 0B        		.uleb128 0xb
+ 1938 0059 0B        		.uleb128 0xb
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 35
+
+
+ 1939 005a 3A        		.uleb128 0x3a
+ 1940 005b 0B        		.uleb128 0xb
+ 1941 005c 3B        		.uleb128 0x3b
+ 1942 005d 0B        		.uleb128 0xb
+ 1943 005e 01        		.uleb128 0x1
+ 1944 005f 13        		.uleb128 0x13
+ 1945 0060 00        		.byte	0x0
+ 1946 0061 00        		.byte	0x0
+ 1947 0062 09        		.uleb128 0x9
+ 1948 0063 0D        		.uleb128 0xd
+ 1949 0064 00        		.byte	0x0
+ 1950 0065 03        		.uleb128 0x3
+ 1951 0066 0E        		.uleb128 0xe
+ 1952 0067 3A        		.uleb128 0x3a
+ 1953 0068 0B        		.uleb128 0xb
+ 1954 0069 3B        		.uleb128 0x3b
+ 1955 006a 0B        		.uleb128 0xb
+ 1956 006b 49        		.uleb128 0x49
+ 1957 006c 13        		.uleb128 0x13
+ 1958 006d 38        		.uleb128 0x38
+ 1959 006e 0A        		.uleb128 0xa
+ 1960 006f 00        		.byte	0x0
+ 1961 0070 00        		.byte	0x0
+ 1962 0071 0A        		.uleb128 0xa
+ 1963 0072 0D        		.uleb128 0xd
+ 1964 0073 00        		.byte	0x0
+ 1965 0074 03        		.uleb128 0x3
+ 1966 0075 08        		.uleb128 0x8
+ 1967 0076 3A        		.uleb128 0x3a
+ 1968 0077 0B        		.uleb128 0xb
+ 1969 0078 3B        		.uleb128 0x3b
+ 1970 0079 0B        		.uleb128 0xb
+ 1971 007a 49        		.uleb128 0x49
+ 1972 007b 13        		.uleb128 0x13
+ 1973 007c 38        		.uleb128 0x38
+ 1974 007d 0A        		.uleb128 0xa
+ 1975 007e 00        		.byte	0x0
+ 1976 007f 00        		.byte	0x0
+ 1977 0080 0B        		.uleb128 0xb
+ 1978 0081 16        		.uleb128 0x16
+ 1979 0082 00        		.byte	0x0
+ 1980 0083 03        		.uleb128 0x3
+ 1981 0084 08        		.uleb128 0x8
+ 1982 0085 3A        		.uleb128 0x3a
+ 1983 0086 0B        		.uleb128 0xb
+ 1984 0087 3B        		.uleb128 0x3b
+ 1985 0088 0B        		.uleb128 0xb
+ 1986 0089 49        		.uleb128 0x49
+ 1987 008a 13        		.uleb128 0x13
+ 1988 008b 00        		.byte	0x0
+ 1989 008c 00        		.byte	0x0
+ 1990 008d 0C        		.uleb128 0xc
+ 1991 008e 2E        		.uleb128 0x2e
+ 1992 008f 01        		.byte	0x1
+ 1993 0090 3F        		.uleb128 0x3f
+ 1994 0091 0C        		.uleb128 0xc
+ 1995 0092 03        		.uleb128 0x3
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 36
+
+
+ 1996 0093 0E        		.uleb128 0xe
+ 1997 0094 3A        		.uleb128 0x3a
+ 1998 0095 0B        		.uleb128 0xb
+ 1999 0096 3B        		.uleb128 0x3b
+ 2000 0097 0B        		.uleb128 0xb
+ 2001 0098 27        		.uleb128 0x27
+ 2002 0099 0C        		.uleb128 0xc
+ 2003 009a 11        		.uleb128 0x11
+ 2004 009b 01        		.uleb128 0x1
+ 2005 009c 12        		.uleb128 0x12
+ 2006 009d 01        		.uleb128 0x1
+ 2007 009e 40        		.uleb128 0x40
+ 2008 009f 0A        		.uleb128 0xa
+ 2009 00a0 01        		.uleb128 0x1
+ 2010 00a1 13        		.uleb128 0x13
+ 2011 00a2 00        		.byte	0x0
+ 2012 00a3 00        		.byte	0x0
+ 2013 00a4 0D        		.uleb128 0xd
+ 2014 00a5 05        		.uleb128 0x5
+ 2015 00a6 00        		.byte	0x0
+ 2016 00a7 03        		.uleb128 0x3
+ 2017 00a8 08        		.uleb128 0x8
+ 2018 00a9 3A        		.uleb128 0x3a
+ 2019 00aa 0B        		.uleb128 0xb
+ 2020 00ab 3B        		.uleb128 0x3b
+ 2021 00ac 0B        		.uleb128 0xb
+ 2022 00ad 49        		.uleb128 0x49
+ 2023 00ae 13        		.uleb128 0x13
+ 2024 00af 02        		.uleb128 0x2
+ 2025 00b0 06        		.uleb128 0x6
+ 2026 00b1 00        		.byte	0x0
+ 2027 00b2 00        		.byte	0x0
+ 2028 00b3 0E        		.uleb128 0xe
+ 2029 00b4 2E        		.uleb128 0x2e
+ 2030 00b5 00        		.byte	0x0
+ 2031 00b6 3F        		.uleb128 0x3f
+ 2032 00b7 0C        		.uleb128 0xc
+ 2033 00b8 03        		.uleb128 0x3
+ 2034 00b9 0E        		.uleb128 0xe
+ 2035 00ba 3A        		.uleb128 0x3a
+ 2036 00bb 0B        		.uleb128 0xb
+ 2037 00bc 3B        		.uleb128 0x3b
+ 2038 00bd 0B        		.uleb128 0xb
+ 2039 00be 49        		.uleb128 0x49
+ 2040 00bf 13        		.uleb128 0x13
+ 2041 00c0 11        		.uleb128 0x11
+ 2042 00c1 01        		.uleb128 0x1
+ 2043 00c2 12        		.uleb128 0x12
+ 2044 00c3 01        		.uleb128 0x1
+ 2045 00c4 40        		.uleb128 0x40
+ 2046 00c5 0A        		.uleb128 0xa
+ 2047 00c6 00        		.byte	0x0
+ 2048 00c7 00        		.byte	0x0
+ 2049 00c8 0F        		.uleb128 0xf
+ 2050 00c9 05        		.uleb128 0x5
+ 2051 00ca 00        		.byte	0x0
+ 2052 00cb 03        		.uleb128 0x3
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 37
+
+
+ 2053 00cc 08        		.uleb128 0x8
+ 2054 00cd 3A        		.uleb128 0x3a
+ 2055 00ce 0B        		.uleb128 0xb
+ 2056 00cf 3B        		.uleb128 0x3b
+ 2057 00d0 0B        		.uleb128 0xb
+ 2058 00d1 49        		.uleb128 0x49
+ 2059 00d2 13        		.uleb128 0x13
+ 2060 00d3 02        		.uleb128 0x2
+ 2061 00d4 0A        		.uleb128 0xa
+ 2062 00d5 00        		.byte	0x0
+ 2063 00d6 00        		.byte	0x0
+ 2064 00d7 10        		.uleb128 0x10
+ 2065 00d8 34        		.uleb128 0x34
+ 2066 00d9 00        		.byte	0x0
+ 2067 00da 03        		.uleb128 0x3
+ 2068 00db 08        		.uleb128 0x8
+ 2069 00dc 3A        		.uleb128 0x3a
+ 2070 00dd 0B        		.uleb128 0xb
+ 2071 00de 3B        		.uleb128 0x3b
+ 2072 00df 0B        		.uleb128 0xb
+ 2073 00e0 49        		.uleb128 0x49
+ 2074 00e1 13        		.uleb128 0x13
+ 2075 00e2 02        		.uleb128 0x2
+ 2076 00e3 06        		.uleb128 0x6
+ 2077 00e4 00        		.byte	0x0
+ 2078 00e5 00        		.byte	0x0
+ 2079 00e6 11        		.uleb128 0x11
+ 2080 00e7 0F        		.uleb128 0xf
+ 2081 00e8 00        		.byte	0x0
+ 2082 00e9 0B        		.uleb128 0xb
+ 2083 00ea 0B        		.uleb128 0xb
+ 2084 00eb 49        		.uleb128 0x49
+ 2085 00ec 13        		.uleb128 0x13
+ 2086 00ed 00        		.byte	0x0
+ 2087 00ee 00        		.byte	0x0
+ 2088 00ef 12        		.uleb128 0x12
+ 2089 00f0 2E        		.uleb128 0x2e
+ 2090 00f1 01        		.byte	0x1
+ 2091 00f2 3F        		.uleb128 0x3f
+ 2092 00f3 0C        		.uleb128 0xc
+ 2093 00f4 03        		.uleb128 0x3
+ 2094 00f5 0E        		.uleb128 0xe
+ 2095 00f6 3A        		.uleb128 0x3a
+ 2096 00f7 0B        		.uleb128 0xb
+ 2097 00f8 3B        		.uleb128 0x3b
+ 2098 00f9 0B        		.uleb128 0xb
+ 2099 00fa 11        		.uleb128 0x11
+ 2100 00fb 01        		.uleb128 0x1
+ 2101 00fc 12        		.uleb128 0x12
+ 2102 00fd 01        		.uleb128 0x1
+ 2103 00fe 40        		.uleb128 0x40
+ 2104 00ff 0A        		.uleb128 0xa
+ 2105 0100 01        		.uleb128 0x1
+ 2106 0101 13        		.uleb128 0x13
+ 2107 0102 00        		.byte	0x0
+ 2108 0103 00        		.byte	0x0
+ 2109 0104 13        		.uleb128 0x13
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 38
+
+
+ 2110 0105 34        		.uleb128 0x34
+ 2111 0106 00        		.byte	0x0
+ 2112 0107 03        		.uleb128 0x3
+ 2113 0108 08        		.uleb128 0x8
+ 2114 0109 3A        		.uleb128 0x3a
+ 2115 010a 0B        		.uleb128 0xb
+ 2116 010b 3B        		.uleb128 0x3b
+ 2117 010c 0B        		.uleb128 0xb
+ 2118 010d 49        		.uleb128 0x49
+ 2119 010e 13        		.uleb128 0x13
+ 2120 010f 02        		.uleb128 0x2
+ 2121 0110 0A        		.uleb128 0xa
+ 2122 0111 00        		.byte	0x0
+ 2123 0112 00        		.byte	0x0
+ 2124 0113 14        		.uleb128 0x14
+ 2125 0114 34        		.uleb128 0x34
+ 2126 0115 00        		.byte	0x0
+ 2127 0116 03        		.uleb128 0x3
+ 2128 0117 0E        		.uleb128 0xe
+ 2129 0118 3A        		.uleb128 0x3a
+ 2130 0119 0B        		.uleb128 0xb
+ 2131 011a 3B        		.uleb128 0x3b
+ 2132 011b 0B        		.uleb128 0xb
+ 2133 011c 49        		.uleb128 0x49
+ 2134 011d 13        		.uleb128 0x13
+ 2135 011e 02        		.uleb128 0x2
+ 2136 011f 06        		.uleb128 0x6
+ 2137 0120 00        		.byte	0x0
+ 2138 0121 00        		.byte	0x0
+ 2139 0122 15        		.uleb128 0x15
+ 2140 0123 34        		.uleb128 0x34
+ 2141 0124 00        		.byte	0x0
+ 2142 0125 03        		.uleb128 0x3
+ 2143 0126 0E        		.uleb128 0xe
+ 2144 0127 3A        		.uleb128 0x3a
+ 2145 0128 0B        		.uleb128 0xb
+ 2146 0129 3B        		.uleb128 0x3b
+ 2147 012a 0B        		.uleb128 0xb
+ 2148 012b 49        		.uleb128 0x49
+ 2149 012c 13        		.uleb128 0x13
+ 2150 012d 00        		.byte	0x0
+ 2151 012e 00        		.byte	0x0
+ 2152 012f 16        		.uleb128 0x16
+ 2153 0130 34        		.uleb128 0x34
+ 2154 0131 00        		.byte	0x0
+ 2155 0132 03        		.uleb128 0x3
+ 2156 0133 0E        		.uleb128 0xe
+ 2157 0134 3A        		.uleb128 0x3a
+ 2158 0135 0B        		.uleb128 0xb
+ 2159 0136 3B        		.uleb128 0x3b
+ 2160 0137 0B        		.uleb128 0xb
+ 2161 0138 49        		.uleb128 0x49
+ 2162 0139 13        		.uleb128 0x13
+ 2163 013a 02        		.uleb128 0x2
+ 2164 013b 0A        		.uleb128 0xa
+ 2165 013c 00        		.byte	0x0
+ 2166 013d 00        		.byte	0x0
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 39
+
+
+ 2167 013e 17        		.uleb128 0x17
+ 2168 013f 0B        		.uleb128 0xb
+ 2169 0140 01        		.byte	0x1
+ 2170 0141 55        		.uleb128 0x55
+ 2171 0142 06        		.uleb128 0x6
+ 2172 0143 00        		.byte	0x0
+ 2173 0144 00        		.byte	0x0
+ 2174 0145 18        		.uleb128 0x18
+ 2175 0146 26        		.uleb128 0x26
+ 2176 0147 00        		.byte	0x0
+ 2177 0148 49        		.uleb128 0x49
+ 2178 0149 13        		.uleb128 0x13
+ 2179 014a 00        		.byte	0x0
+ 2180 014b 00        		.byte	0x0
+ 2181 014c 19        		.uleb128 0x19
+ 2182 014d 2E        		.uleb128 0x2e
+ 2183 014e 00        		.byte	0x0
+ 2184 014f 3F        		.uleb128 0x3f
+ 2185 0150 0C        		.uleb128 0xc
+ 2186 0151 03        		.uleb128 0x3
+ 2187 0152 0E        		.uleb128 0xe
+ 2188 0153 3A        		.uleb128 0x3a
+ 2189 0154 0B        		.uleb128 0xb
+ 2190 0155 3B        		.uleb128 0x3b
+ 2191 0156 0B        		.uleb128 0xb
+ 2192 0157 11        		.uleb128 0x11
+ 2193 0158 01        		.uleb128 0x1
+ 2194 0159 12        		.uleb128 0x12
+ 2195 015a 01        		.uleb128 0x1
+ 2196 015b 40        		.uleb128 0x40
+ 2197 015c 0A        		.uleb128 0xa
+ 2198 015d 00        		.byte	0x0
+ 2199 015e 00        		.byte	0x0
+ 2200 015f 1A        		.uleb128 0x1a
+ 2201 0160 01        		.uleb128 0x1
+ 2202 0161 01        		.byte	0x1
+ 2203 0162 49        		.uleb128 0x49
+ 2204 0163 13        		.uleb128 0x13
+ 2205 0164 01        		.uleb128 0x1
+ 2206 0165 13        		.uleb128 0x13
+ 2207 0166 00        		.byte	0x0
+ 2208 0167 00        		.byte	0x0
+ 2209 0168 1B        		.uleb128 0x1b
+ 2210 0169 21        		.uleb128 0x21
+ 2211 016a 00        		.byte	0x0
+ 2212 016b 00        		.byte	0x0
+ 2213 016c 00        		.byte	0x0
+ 2214 016d 1C        		.uleb128 0x1c
+ 2215 016e 34        		.uleb128 0x34
+ 2216 016f 00        		.byte	0x0
+ 2217 0170 03        		.uleb128 0x3
+ 2218 0171 0E        		.uleb128 0xe
+ 2219 0172 3A        		.uleb128 0x3a
+ 2220 0173 0B        		.uleb128 0xb
+ 2221 0174 3B        		.uleb128 0x3b
+ 2222 0175 0B        		.uleb128 0xb
+ 2223 0176 49        		.uleb128 0x49
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 40
+
+
+ 2224 0177 13        		.uleb128 0x13
+ 2225 0178 3F        		.uleb128 0x3f
+ 2226 0179 0C        		.uleb128 0xc
+ 2227 017a 3C        		.uleb128 0x3c
+ 2228 017b 0C        		.uleb128 0xc
+ 2229 017c 00        		.byte	0x0
+ 2230 017d 00        		.byte	0x0
+ 2231 017e 1D        		.uleb128 0x1d
+ 2232 017f 34        		.uleb128 0x34
+ 2233 0180 00        		.byte	0x0
+ 2234 0181 03        		.uleb128 0x3
+ 2235 0182 0E        		.uleb128 0xe
+ 2236 0183 3A        		.uleb128 0x3a
+ 2237 0184 0B        		.uleb128 0xb
+ 2238 0185 3B        		.uleb128 0x3b
+ 2239 0186 0B        		.uleb128 0xb
+ 2240 0187 49        		.uleb128 0x49
+ 2241 0188 13        		.uleb128 0x13
+ 2242 0189 3F        		.uleb128 0x3f
+ 2243 018a 0C        		.uleb128 0xc
+ 2244 018b 02        		.uleb128 0x2
+ 2245 018c 0A        		.uleb128 0xa
+ 2246 018d 00        		.byte	0x0
+ 2247 018e 00        		.byte	0x0
+ 2248 018f 00        		.byte	0x0
+ 2249               		.section	.debug_pubnames,"",@progbits
+ 2250 0000 CF00 0000 		.long	0xcf
+ 2251 0004 0200      		.word	0x2
+ 2252 0006 0000 0000 		.long	.Ldebug_info0
+ 2253 000a EC03 0000 		.long	0x3ec
+ 2254 000e 6B01 0000 		.long	0x16b
+ 2255 0012 7365 745F 		.string	"set_orientation"
+ 2255      6F72 6965 
+ 2255      6E74 6174 
+ 2255      696F 6E00 
+ 2256 0022 9101 0000 		.long	0x191
+ 2257 0026 6765 745F 		.string	"get_orientation"
+ 2257      6F72 6965 
+ 2257      6E74 6174 
+ 2257      696F 6E00 
+ 2258 0036 A801 0000 		.long	0x1a8
+ 2259 003a 6765 745F 		.string	"get_width"
+ 2259      7769 6474 
+ 2259      6800 
+ 2260 0044 BF01 0000 		.long	0x1bf
+ 2261 0048 6765 745F 		.string	"get_height"
+ 2261      6865 6967 
+ 2261      6874 00
+ 2262 0053 D601 0000 		.long	0x1d6
+ 2263 0057 6669 6C6C 		.string	"fill_rectangle"
+ 2263      5F72 6563 
+ 2263      7461 6E67 
+ 2263      6C65 00
+ 2264 0066 2402 0000 		.long	0x224
+ 2265 006a 6669 6C6C 		.string	"fill_rectangle_indexed"
+ 2265      5F72 6563 
+ 2265      7461 6E67 
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 41
+
+
+ 2265      6C65 5F69 
+ 2265      6E64 6578 
+ 2266 0081 7802 0000 		.long	0x278
+ 2267 0085 636C 6561 		.string	"clear_screen"
+ 2267      725F 7363 
+ 2267      7265 656E 
+ 2267      00
+ 2268 0092 9C02 0000 		.long	0x29c
+ 2269 0096 6469 7370 		.string	"display_char"
+ 2269      6C61 795F 
+ 2269      6368 6172 
+ 2269      00
+ 2270 00a3 6E03 0000 		.long	0x36e
+ 2271 00a7 6469 7370 		.string	"display_string"
+ 2271      6C61 795F 
+ 2271      7374 7269 
+ 2271      6E67 00
+ 2272 00b6 A903 0000 		.long	0x3a9
+ 2273 00ba 696E 6974 		.string	"init_lcd"
+ 2273      5F6C 6364 
+ 2273      00
+ 2274 00c3 D903 0000 		.long	0x3d9
+ 2275 00c7 6469 7370 		.string	"display"
+ 2275      6C61 7900 
+ 2276 00cf 0000 0000 		.long	0x0
+ 2277               		.section	.debug_aranges,"",@progbits
+ 2278 0000 1C00 0000 		.long	0x1c
+ 2279 0004 0200      		.word	0x2
+ 2280 0006 0000 0000 		.long	.Ldebug_info0
+ 2281 000a 04        		.byte	0x4
+ 2282 000b 00        		.byte	0x0
+ 2283 000c 0000      		.word	0x0
+ 2284 000e 0000      		.word	0x0
+ 2285 0010 0000 0000 		.long	.Ltext0
+ 2286 0014 4A05 0000 		.long	.Letext0-.Ltext0
+ 2287 0018 0000 0000 		.long	0x0
+ 2288 001c 0000 0000 		.long	0x0
+ 2289               		.section	.debug_ranges,"",@progbits
+ 2290               	.Ldebug_ranges0:
+ 2291 0000 2A04 0000 		.long	.LBB2-.Ltext0
+ 2292 0004 3404 0000 		.long	.LBE2-.Ltext0
+ 2293 0008 6204 0000 		.long	.LBB3-.Ltext0
+ 2294 000c 6604 0000 		.long	.LBE3-.Ltext0
+ 2295 0010 0000 0000 		.long	0x0
+ 2296 0014 0000 0000 		.long	0x0
+ 2297               		.section	.debug_line
+ 2298 0000 2504 0000 		.long	.LELT0-.LSLT0
+ 2299               	.LSLT0:
+ 2300 0004 0200      		.word	0x2
+ 2301 0006 A800 0000 		.long	.LELTP0-.LASLTP0
+ 2302               	.LASLTP0:
+ 2303 000a 01        		.byte	0x1
+ 2304 000b 01        		.byte	0x1
+ 2305 000c F6        		.byte	0xf6
+ 2306 000d F5        		.byte	0xf5
+ 2307 000e 0A        		.byte	0xa
+ 2308 000f 00        		.byte	0x0
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 42
+
+
+ 2309 0010 01        		.byte	0x1
+ 2310 0011 01        		.byte	0x1
+ 2311 0012 01        		.byte	0x1
+ 2312 0013 01        		.byte	0x1
+ 2313 0014 00        		.byte	0x0
+ 2314 0015 00        		.byte	0x0
+ 2315 0016 00        		.byte	0x0
+ 2316 0017 01        		.byte	0x1
+ 2317 0018 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include"
+ 2317      696E 6176 
+ 2317      722D 3230 
+ 2317      3130 3031 
+ 2317      3130 2F6C 
+ 2318 0044 00        		.byte	0
+ 2319 0045 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include/avr"
+ 2319      696E 6176 
+ 2319      722D 3230 
+ 2319      3130 3031 
+ 2319      3130 2F6C 
+ 2320 0075 00        		.byte	0
+ 2321 0076 00        		.byte	0x0
+ 2322 0077 6C63 642E 		.string	"lcd.c"
+ 2322      6300 
+ 2323 007d 00        		.uleb128 0x0
+ 2324 007e 00        		.uleb128 0x0
+ 2325 007f 00        		.uleb128 0x0
+ 2326 0080 7374 6469 		.string	"stdint.h"
+ 2326      6E74 2E68 
+ 2326      00
+ 2327 0089 01        		.uleb128 0x1
+ 2328 008a 00        		.uleb128 0x0
+ 2329 008b 00        		.uleb128 0x0
+ 2330 008c 6176 722F 		.string	"avr/pgmspace.h"
+ 2330      7067 6D73 
+ 2330      7061 6365 
+ 2330      2E68 00
+ 2331 009b 01        		.uleb128 0x1
+ 2332 009c 00        		.uleb128 0x0
+ 2333 009d 00        		.uleb128 0x0
+ 2334 009e 6C63 642E 		.string	"lcd.h"
+ 2334      6800 
+ 2335 00a4 00        		.uleb128 0x0
+ 2336 00a5 00        		.uleb128 0x0
+ 2337 00a6 00        		.uleb128 0x0
+ 2338 00a7 666F 6E74 		.string	"font.h"
+ 2338      2E68 00
+ 2339 00ae 00        		.uleb128 0x0
+ 2340 00af 00        		.uleb128 0x0
+ 2341 00b0 00        		.uleb128 0x0
+ 2342 00b1 00        		.byte	0x0
+ 2343               	.LELTP0:
+ 2344 00b2 00        		.byte	0x0
+ 2345 00b3 05        		.uleb128 0x5
+ 2346 00b4 02        		.byte	0x2
+ 2347 00b5 0000 0000 		.long	.LM1
+ 2348 00b9 2E        		.byte	0x2e
+ 2349 00ba 00        		.byte	0x0
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 43
+
+
+ 2350 00bb 05        		.uleb128 0x5
+ 2351 00bc 02        		.byte	0x2
+ 2352 00bd 0000 0000 		.long	.LM2
+ 2353 00c1 15        		.byte	0x15
+ 2354 00c2 00        		.byte	0x0
+ 2355 00c3 05        		.uleb128 0x5
+ 2356 00c4 02        		.byte	0x2
+ 2357 00c5 0000 0000 		.long	.LM3
+ 2358 00c9 15        		.byte	0x15
+ 2359 00ca 00        		.byte	0x0
+ 2360 00cb 05        		.uleb128 0x5
+ 2361 00cc 02        		.byte	0x2
+ 2362 00cd 0000 0000 		.long	.LM4
+ 2363 00d1 15        		.byte	0x15
+ 2364 00d2 00        		.byte	0x0
+ 2365 00d3 05        		.uleb128 0x5
+ 2366 00d4 02        		.byte	0x2
+ 2367 00d5 0000 0000 		.long	.LM5
+ 2368 00d9 15        		.byte	0x15
+ 2369 00da 00        		.byte	0x0
+ 2370 00db 05        		.uleb128 0x5
+ 2371 00dc 02        		.byte	0x2
+ 2372 00dd 0000 0000 		.long	.LM6
+ 2373 00e1 15        		.byte	0x15
+ 2374 00e2 00        		.byte	0x0
+ 2375 00e3 05        		.uleb128 0x5
+ 2376 00e4 02        		.byte	0x2
+ 2377 00e5 0000 0000 		.long	.LM7
+ 2378 00e9 15        		.byte	0x15
+ 2379 00ea 00        		.byte	0x0
+ 2380 00eb 05        		.uleb128 0x5
+ 2381 00ec 02        		.byte	0x2
+ 2382 00ed 0000 0000 		.long	.LM8
+ 2383 00f1 16        		.byte	0x16
+ 2384 00f2 00        		.byte	0x0
+ 2385 00f3 05        		.uleb128 0x5
+ 2386 00f4 02        		.byte	0x2
+ 2387 00f5 0000 0000 		.long	.LM9
+ 2388 00f9 15        		.byte	0x15
+ 2389 00fa 00        		.byte	0x0
+ 2390 00fb 05        		.uleb128 0x5
+ 2391 00fc 02        		.byte	0x2
+ 2392 00fd 0000 0000 		.long	.LM10
+ 2393 0101 15        		.byte	0x15
+ 2394 0102 00        		.byte	0x0
+ 2395 0103 05        		.uleb128 0x5
+ 2396 0104 02        		.byte	0x2
+ 2397 0105 0000 0000 		.long	.LM11
+ 2398 0109 15        		.byte	0x15
+ 2399 010a 00        		.byte	0x0
+ 2400 010b 05        		.uleb128 0x5
+ 2401 010c 02        		.byte	0x2
+ 2402 010d 0000 0000 		.long	.LM12
+ 2403 0111 16        		.byte	0x16
+ 2404 0112 00        		.byte	0x0
+ 2405 0113 05        		.uleb128 0x5
+ 2406 0114 02        		.byte	0x2
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 44
+
+
+ 2407 0115 0000 0000 		.long	.LM13
+ 2408 0119 15        		.byte	0x15
+ 2409 011a 00        		.byte	0x0
+ 2410 011b 05        		.uleb128 0x5
+ 2411 011c 02        		.byte	0x2
+ 2412 011d 0000 0000 		.long	.LM14
+ 2413 0121 15        		.byte	0x15
+ 2414 0122 00        		.byte	0x0
+ 2415 0123 05        		.uleb128 0x5
+ 2416 0124 02        		.byte	0x2
+ 2417 0125 0000 0000 		.long	.LM15
+ 2418 0129 15        		.byte	0x15
+ 2419 012a 00        		.byte	0x0
+ 2420 012b 05        		.uleb128 0x5
+ 2421 012c 02        		.byte	0x2
+ 2422 012d 0000 0000 		.long	.LM16
+ 2423 0131 16        		.byte	0x16
+ 2424 0132 00        		.byte	0x0
+ 2425 0133 05        		.uleb128 0x5
+ 2426 0134 02        		.byte	0x2
+ 2427 0135 0000 0000 		.long	.LM17
+ 2428 0139 15        		.byte	0x15
+ 2429 013a 00        		.byte	0x0
+ 2430 013b 05        		.uleb128 0x5
+ 2431 013c 02        		.byte	0x2
+ 2432 013d 0000 0000 		.long	.LM18
+ 2433 0141 15        		.byte	0x15
+ 2434 0142 00        		.byte	0x0
+ 2435 0143 05        		.uleb128 0x5
+ 2436 0144 02        		.byte	0x2
+ 2437 0145 0000 0000 		.long	.LM19
+ 2438 0149 15        		.byte	0x15
+ 2439 014a 00        		.byte	0x0
+ 2440 014b 05        		.uleb128 0x5
+ 2441 014c 02        		.byte	0x2
+ 2442 014d 0000 0000 		.long	.LM20
+ 2443 0151 16        		.byte	0x16
+ 2444 0152 00        		.byte	0x0
+ 2445 0153 05        		.uleb128 0x5
+ 2446 0154 02        		.byte	0x2
+ 2447 0155 0000 0000 		.long	.LM21
+ 2448 0159 15        		.byte	0x15
+ 2449 015a 00        		.byte	0x0
+ 2450 015b 05        		.uleb128 0x5
+ 2451 015c 02        		.byte	0x2
+ 2452 015d 0000 0000 		.long	.LM22
+ 2453 0161 15        		.byte	0x15
+ 2454 0162 00        		.byte	0x0
+ 2455 0163 05        		.uleb128 0x5
+ 2456 0164 02        		.byte	0x2
+ 2457 0165 0000 0000 		.long	.LM23
+ 2458 0169 15        		.byte	0x15
+ 2459 016a 00        		.byte	0x0
+ 2460 016b 05        		.uleb128 0x5
+ 2461 016c 02        		.byte	0x2
+ 2462 016d 0000 0000 		.long	.LM24
+ 2463 0171 15        		.byte	0x15
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 45
+
+
+ 2464 0172 00        		.byte	0x0
+ 2465 0173 05        		.uleb128 0x5
+ 2466 0174 02        		.byte	0x2
+ 2467 0175 0000 0000 		.long	.LM25
+ 2468 0179 15        		.byte	0x15
+ 2469 017a 00        		.byte	0x0
+ 2470 017b 05        		.uleb128 0x5
+ 2471 017c 02        		.byte	0x2
+ 2472 017d 0000 0000 		.long	.LM26
+ 2473 0181 15        		.byte	0x15
+ 2474 0182 00        		.byte	0x0
+ 2475 0183 05        		.uleb128 0x5
+ 2476 0184 02        		.byte	0x2
+ 2477 0185 0000 0000 		.long	.LM27
+ 2478 0189 16        		.byte	0x16
+ 2479 018a 00        		.byte	0x0
+ 2480 018b 05        		.uleb128 0x5
+ 2481 018c 02        		.byte	0x2
+ 2482 018d 0000 0000 		.long	.LM28
+ 2483 0191 16        		.byte	0x16
+ 2484 0192 00        		.byte	0x0
+ 2485 0193 05        		.uleb128 0x5
+ 2486 0194 02        		.byte	0x2
+ 2487 0195 0000 0000 		.long	.LM29
+ 2488 0199 16        		.byte	0x16
+ 2489 019a 00        		.byte	0x0
+ 2490 019b 05        		.uleb128 0x5
+ 2491 019c 02        		.byte	0x2
+ 2492 019d 0000 0000 		.long	.LM30
+ 2493 01a1 16        		.byte	0x16
+ 2494 01a2 00        		.byte	0x0
+ 2495 01a3 05        		.uleb128 0x5
+ 2496 01a4 02        		.byte	0x2
+ 2497 01a5 0000 0000 		.long	.LM31
+ 2498 01a9 16        		.byte	0x16
+ 2499 01aa 00        		.byte	0x0
+ 2500 01ab 05        		.uleb128 0x5
+ 2501 01ac 02        		.byte	0x2
+ 2502 01ad 0000 0000 		.long	.LM32
+ 2503 01b1 16        		.byte	0x16
+ 2504 01b2 00        		.byte	0x0
+ 2505 01b3 05        		.uleb128 0x5
+ 2506 01b4 02        		.byte	0x2
+ 2507 01b5 0000 0000 		.long	.LM33
+ 2508 01b9 17        		.byte	0x17
+ 2509 01ba 00        		.byte	0x0
+ 2510 01bb 05        		.uleb128 0x5
+ 2511 01bc 02        		.byte	0x2
+ 2512 01bd 0000 0000 		.long	.LM34
+ 2513 01c1 01        		.byte	0x1
+ 2514 01c2 00        		.byte	0x0
+ 2515 01c3 05        		.uleb128 0x5
+ 2516 01c4 02        		.byte	0x2
+ 2517 01c5 0000 0000 		.long	.LM35
+ 2518 01c9 16        		.byte	0x16
+ 2519 01ca 00        		.byte	0x0
+ 2520 01cb 05        		.uleb128 0x5
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 46
+
+
+ 2521 01cc 02        		.byte	0x2
+ 2522 01cd 0000 0000 		.long	.LM36
+ 2523 01d1 15        		.byte	0x15
+ 2524 01d2 00        		.byte	0x0
+ 2525 01d3 05        		.uleb128 0x5
+ 2526 01d4 02        		.byte	0x2
+ 2527 01d5 0000 0000 		.long	.LM37
+ 2528 01d9 15        		.byte	0x15
+ 2529 01da 00        		.byte	0x0
+ 2530 01db 05        		.uleb128 0x5
+ 2531 01dc 02        		.byte	0x2
+ 2532 01dd 0000 0000 		.long	.LM38
+ 2533 01e1 15        		.byte	0x15
+ 2534 01e2 00        		.byte	0x0
+ 2535 01e3 05        		.uleb128 0x5
+ 2536 01e4 02        		.byte	0x2
+ 2537 01e5 0000 0000 		.long	.LM39
+ 2538 01e9 15        		.byte	0x15
+ 2539 01ea 00        		.byte	0x0
+ 2540 01eb 05        		.uleb128 0x5
+ 2541 01ec 02        		.byte	0x2
+ 2542 01ed 0000 0000 		.long	.LM40
+ 2543 01f1 15        		.byte	0x15
+ 2544 01f2 00        		.byte	0x0
+ 2545 01f3 05        		.uleb128 0x5
+ 2546 01f4 02        		.byte	0x2
+ 2547 01f5 0000 0000 		.long	.LM41
+ 2548 01f9 15        		.byte	0x15
+ 2549 01fa 00        		.byte	0x0
+ 2550 01fb 05        		.uleb128 0x5
+ 2551 01fc 02        		.byte	0x2
+ 2552 01fd 0000 0000 		.long	.LM42
+ 2553 0201 17        		.byte	0x17
+ 2554 0202 00        		.byte	0x0
+ 2555 0203 05        		.uleb128 0x5
+ 2556 0204 02        		.byte	0x2
+ 2557 0205 0000 0000 		.long	.LM43
+ 2558 0209 12        		.byte	0x12
+ 2559 020a 00        		.byte	0x0
+ 2560 020b 05        		.uleb128 0x5
+ 2561 020c 02        		.byte	0x2
+ 2562 020d 0000 0000 		.long	.LM44
+ 2563 0211 16        		.byte	0x16
+ 2564 0212 00        		.byte	0x0
+ 2565 0213 05        		.uleb128 0x5
+ 2566 0214 02        		.byte	0x2
+ 2567 0215 0000 0000 		.long	.LM45
+ 2568 0219 13        		.byte	0x13
+ 2569 021a 00        		.byte	0x0
+ 2570 021b 05        		.uleb128 0x5
+ 2571 021c 02        		.byte	0x2
+ 2572 021d 0000 0000 		.long	.LM46
+ 2573 0221 13        		.byte	0x13
+ 2574 0222 00        		.byte	0x0
+ 2575 0223 05        		.uleb128 0x5
+ 2576 0224 02        		.byte	0x2
+ 2577 0225 0000 0000 		.long	.LM47
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 47
+
+
+ 2578 0229 17        		.byte	0x17
+ 2579 022a 00        		.byte	0x0
+ 2580 022b 05        		.uleb128 0x5
+ 2581 022c 02        		.byte	0x2
+ 2582 022d 0000 0000 		.long	.LM48
+ 2583 0231 17        		.byte	0x17
+ 2584 0232 00        		.byte	0x0
+ 2585 0233 05        		.uleb128 0x5
+ 2586 0234 02        		.byte	0x2
+ 2587 0235 0000 0000 		.long	.LM49
+ 2588 0239 01        		.byte	0x1
+ 2589 023a 00        		.byte	0x0
+ 2590 023b 05        		.uleb128 0x5
+ 2591 023c 02        		.byte	0x2
+ 2592 023d 0000 0000 		.long	.LM50
+ 2593 0241 16        		.byte	0x16
+ 2594 0242 00        		.byte	0x0
+ 2595 0243 05        		.uleb128 0x5
+ 2596 0244 02        		.byte	0x2
+ 2597 0245 0000 0000 		.long	.LM51
+ 2598 0249 15        		.byte	0x15
+ 2599 024a 00        		.byte	0x0
+ 2600 024b 05        		.uleb128 0x5
+ 2601 024c 02        		.byte	0x2
+ 2602 024d 0000 0000 		.long	.LM52
+ 2603 0251 15        		.byte	0x15
+ 2604 0252 00        		.byte	0x0
+ 2605 0253 05        		.uleb128 0x5
+ 2606 0254 02        		.byte	0x2
+ 2607 0255 0000 0000 		.long	.LM53
+ 2608 0259 15        		.byte	0x15
+ 2609 025a 00        		.byte	0x0
+ 2610 025b 05        		.uleb128 0x5
+ 2611 025c 02        		.byte	0x2
+ 2612 025d 0000 0000 		.long	.LM54
+ 2613 0261 15        		.byte	0x15
+ 2614 0262 00        		.byte	0x0
+ 2615 0263 05        		.uleb128 0x5
+ 2616 0264 02        		.byte	0x2
+ 2617 0265 0000 0000 		.long	.LM55
+ 2618 0269 15        		.byte	0x15
+ 2619 026a 00        		.byte	0x0
+ 2620 026b 05        		.uleb128 0x5
+ 2621 026c 02        		.byte	0x2
+ 2622 026d 0000 0000 		.long	.LM56
+ 2623 0271 15        		.byte	0x15
+ 2624 0272 00        		.byte	0x0
+ 2625 0273 05        		.uleb128 0x5
+ 2626 0274 02        		.byte	0x2
+ 2627 0275 0000 0000 		.long	.LM57
+ 2628 0279 17        		.byte	0x17
+ 2629 027a 00        		.byte	0x0
+ 2630 027b 05        		.uleb128 0x5
+ 2631 027c 02        		.byte	0x2
+ 2632 027d 0000 0000 		.long	.LM58
+ 2633 0281 03        		.byte	0x3
+ 2634 0282 75        		.sleb128 -11
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 48
+
+
+ 2635 0283 01        		.byte	0x1
+ 2636 0284 00        		.byte	0x0
+ 2637 0285 05        		.uleb128 0x5
+ 2638 0286 02        		.byte	0x2
+ 2639 0287 0000 0000 		.long	.LM59
+ 2640 028b 1F        		.byte	0x1f
+ 2641 028c 00        		.byte	0x0
+ 2642 028d 05        		.uleb128 0x5
+ 2643 028e 02        		.byte	0x2
+ 2644 028f 0000 0000 		.long	.LM60
+ 2645 0293 13        		.byte	0x13
+ 2646 0294 00        		.byte	0x0
+ 2647 0295 05        		.uleb128 0x5
+ 2648 0296 02        		.byte	0x2
+ 2649 0297 0000 0000 		.long	.LM61
+ 2650 029b 13        		.byte	0x13
+ 2651 029c 00        		.byte	0x0
+ 2652 029d 05        		.uleb128 0x5
+ 2653 029e 02        		.byte	0x2
+ 2654 029f 0000 0000 		.long	.LM62
+ 2655 02a3 17        		.byte	0x17
+ 2656 02a4 00        		.byte	0x0
+ 2657 02a5 05        		.uleb128 0x5
+ 2658 02a6 02        		.byte	0x2
+ 2659 02a7 0000 0000 		.long	.LM63
+ 2660 02ab 17        		.byte	0x17
+ 2661 02ac 00        		.byte	0x0
+ 2662 02ad 05        		.uleb128 0x5
+ 2663 02ae 02        		.byte	0x2
+ 2664 02af 0000 0000 		.long	.LM64
+ 2665 02b3 15        		.byte	0x15
+ 2666 02b4 00        		.byte	0x0
+ 2667 02b5 05        		.uleb128 0x5
+ 2668 02b6 02        		.byte	0x2
+ 2669 02b7 0000 0000 		.long	.LM65
+ 2670 02bb 15        		.byte	0x15
+ 2671 02bc 00        		.byte	0x0
+ 2672 02bd 05        		.uleb128 0x5
+ 2673 02be 02        		.byte	0x2
+ 2674 02bf 0000 0000 		.long	.LM66
+ 2675 02c3 15        		.byte	0x15
+ 2676 02c4 00        		.byte	0x0
+ 2677 02c5 05        		.uleb128 0x5
+ 2678 02c6 02        		.byte	0x2
+ 2679 02c7 0000 0000 		.long	.LM67
+ 2680 02cb 15        		.byte	0x15
+ 2681 02cc 00        		.byte	0x0
+ 2682 02cd 05        		.uleb128 0x5
+ 2683 02ce 02        		.byte	0x2
+ 2684 02cf 0000 0000 		.long	.LM68
+ 2685 02d3 15        		.byte	0x15
+ 2686 02d4 00        		.byte	0x0
+ 2687 02d5 05        		.uleb128 0x5
+ 2688 02d6 02        		.byte	0x2
+ 2689 02d7 0000 0000 		.long	.LM69
+ 2690 02db 17        		.byte	0x17
+ 2691 02dc 00        		.byte	0x0
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 49
+
+
+ 2692 02dd 05        		.uleb128 0x5
+ 2693 02de 02        		.byte	0x2
+ 2694 02df 0000 0000 		.long	.LM70
+ 2695 02e3 18        		.byte	0x18
+ 2696 02e4 00        		.byte	0x0
+ 2697 02e5 05        		.uleb128 0x5
+ 2698 02e6 02        		.byte	0x2
+ 2699 02e7 0000 0000 		.long	.LM71
+ 2700 02eb 15        		.byte	0x15
+ 2701 02ec 00        		.byte	0x0
+ 2702 02ed 05        		.uleb128 0x5
+ 2703 02ee 02        		.byte	0x2
+ 2704 02ef 0000 0000 		.long	.LM72
+ 2705 02f3 13        		.byte	0x13
+ 2706 02f4 00        		.byte	0x0
+ 2707 02f5 05        		.uleb128 0x5
+ 2708 02f6 02        		.byte	0x2
+ 2709 02f7 0000 0000 		.long	.LM73
+ 2710 02fb 16        		.byte	0x16
+ 2711 02fc 00        		.byte	0x0
+ 2712 02fd 05        		.uleb128 0x5
+ 2713 02fe 02        		.byte	0x2
+ 2714 02ff 0000 0000 		.long	.LM74
+ 2715 0303 15        		.byte	0x15
+ 2716 0304 00        		.byte	0x0
+ 2717 0305 05        		.uleb128 0x5
+ 2718 0306 02        		.byte	0x2
+ 2719 0307 0000 0000 		.long	.LM75
+ 2720 030b 15        		.byte	0x15
+ 2721 030c 00        		.byte	0x0
+ 2722 030d 05        		.uleb128 0x5
+ 2723 030e 02        		.byte	0x2
+ 2724 030f 0000 0000 		.long	.LM76
+ 2725 0313 15        		.byte	0x15
+ 2726 0314 00        		.byte	0x0
+ 2727 0315 05        		.uleb128 0x5
+ 2728 0316 02        		.byte	0x2
+ 2729 0317 0000 0000 		.long	.LM77
+ 2730 031b 1C        		.byte	0x1c
+ 2731 031c 00        		.byte	0x0
+ 2732 031d 05        		.uleb128 0x5
+ 2733 031e 02        		.byte	0x2
+ 2734 031f 0000 0000 		.long	.LM78
+ 2735 0323 0E        		.byte	0xe
+ 2736 0324 00        		.byte	0x0
+ 2737 0325 05        		.uleb128 0x5
+ 2738 0326 02        		.byte	0x2
+ 2739 0327 0000 0000 		.long	.LM79
+ 2740 032b 17        		.byte	0x17
+ 2741 032c 00        		.byte	0x0
+ 2742 032d 05        		.uleb128 0x5
+ 2743 032e 02        		.byte	0x2
+ 2744 032f 0000 0000 		.long	.LM80
+ 2745 0333 11        		.byte	0x11
+ 2746 0334 00        		.byte	0x0
+ 2747 0335 05        		.uleb128 0x5
+ 2748 0336 02        		.byte	0x2
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 50
+
+
+ 2749 0337 0000 0000 		.long	.LM81
+ 2750 033b 15        		.byte	0x15
+ 2751 033c 00        		.byte	0x0
+ 2752 033d 05        		.uleb128 0x5
+ 2753 033e 02        		.byte	0x2
+ 2754 033f 0000 0000 		.long	.LM82
+ 2755 0343 15        		.byte	0x15
+ 2756 0344 00        		.byte	0x0
+ 2757 0345 05        		.uleb128 0x5
+ 2758 0346 02        		.byte	0x2
+ 2759 0347 0000 0000 		.long	.LM83
+ 2760 034b 15        		.byte	0x15
+ 2761 034c 00        		.byte	0x0
+ 2762 034d 05        		.uleb128 0x5
+ 2763 034e 02        		.byte	0x2
+ 2764 034f 0000 0000 		.long	.LM84
+ 2765 0353 15        		.byte	0x15
+ 2766 0354 00        		.byte	0x0
+ 2767 0355 05        		.uleb128 0x5
+ 2768 0356 02        		.byte	0x2
+ 2769 0357 0000 0000 		.long	.LM85
+ 2770 035b 16        		.byte	0x16
+ 2771 035c 00        		.byte	0x0
+ 2772 035d 05        		.uleb128 0x5
+ 2773 035e 02        		.byte	0x2
+ 2774 035f 0000 0000 		.long	.LM86
+ 2775 0363 13        		.byte	0x13
+ 2776 0364 00        		.byte	0x0
+ 2777 0365 05        		.uleb128 0x5
+ 2778 0366 02        		.byte	0x2
+ 2779 0367 0000 0000 		.long	.LM87
+ 2780 036b 13        		.byte	0x13
+ 2781 036c 00        		.byte	0x0
+ 2782 036d 05        		.uleb128 0x5
+ 2783 036e 02        		.byte	0x2
+ 2784 036f 0000 0000 		.long	.LM88
+ 2785 0373 0F        		.byte	0xf
+ 2786 0374 00        		.byte	0x0
+ 2787 0375 05        		.uleb128 0x5
+ 2788 0376 02        		.byte	0x2
+ 2789 0377 0000 0000 		.long	.LM89
+ 2790 037b 1D        		.byte	0x1d
+ 2791 037c 00        		.byte	0x0
+ 2792 037d 05        		.uleb128 0x5
+ 2793 037e 02        		.byte	0x2
+ 2794 037f 0000 0000 		.long	.LM90
+ 2795 0383 15        		.byte	0x15
+ 2796 0384 00        		.byte	0x0
+ 2797 0385 05        		.uleb128 0x5
+ 2798 0386 02        		.byte	0x2
+ 2799 0387 0000 0000 		.long	.LM91
+ 2800 038b 15        		.byte	0x15
+ 2801 038c 00        		.byte	0x0
+ 2802 038d 05        		.uleb128 0x5
+ 2803 038e 02        		.byte	0x2
+ 2804 038f 0000 0000 		.long	.LM92
+ 2805 0393 15        		.byte	0x15
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 51
+
+
+ 2806 0394 00        		.byte	0x0
+ 2807 0395 05        		.uleb128 0x5
+ 2808 0396 02        		.byte	0x2
+ 2809 0397 0000 0000 		.long	.LM93
+ 2810 039b 16        		.byte	0x16
+ 2811 039c 00        		.byte	0x0
+ 2812 039d 05        		.uleb128 0x5
+ 2813 039e 02        		.byte	0x2
+ 2814 039f 0000 0000 		.long	.LM94
+ 2815 03a3 13        		.byte	0x13
+ 2816 03a4 00        		.byte	0x0
+ 2817 03a5 05        		.uleb128 0x5
+ 2818 03a6 02        		.byte	0x2
+ 2819 03a7 0000 0000 		.long	.LM95
+ 2820 03ab 17        		.byte	0x17
+ 2821 03ac 00        		.byte	0x0
+ 2822 03ad 05        		.uleb128 0x5
+ 2823 03ae 02        		.byte	0x2
+ 2824 03af 0000 0000 		.long	.LM96
+ 2825 03b3 15        		.byte	0x15
+ 2826 03b4 00        		.byte	0x0
+ 2827 03b5 05        		.uleb128 0x5
+ 2828 03b6 02        		.byte	0x2
+ 2829 03b7 0000 0000 		.long	.LM97
+ 2830 03bb 15        		.byte	0x15
+ 2831 03bc 00        		.byte	0x0
+ 2832 03bd 05        		.uleb128 0x5
+ 2833 03be 02        		.byte	0x2
+ 2834 03bf 0000 0000 		.long	.LM98
+ 2835 03c3 17        		.byte	0x17
+ 2836 03c4 00        		.byte	0x0
+ 2837 03c5 05        		.uleb128 0x5
+ 2838 03c6 02        		.byte	0x2
+ 2839 03c7 0000 0000 		.long	.LM99
+ 2840 03cb 01        		.byte	0x1
+ 2841 03cc 00        		.byte	0x0
+ 2842 03cd 05        		.uleb128 0x5
+ 2843 03ce 02        		.byte	0x2
+ 2844 03cf 0000 0000 		.long	.LM100
+ 2845 03d3 17        		.byte	0x17
+ 2846 03d4 00        		.byte	0x0
+ 2847 03d5 05        		.uleb128 0x5
+ 2848 03d6 02        		.byte	0x2
+ 2849 03d7 0000 0000 		.long	.LM101
+ 2850 03db 13        		.byte	0x13
+ 2851 03dc 00        		.byte	0x0
+ 2852 03dd 05        		.uleb128 0x5
+ 2853 03de 02        		.byte	0x2
+ 2854 03df 0000 0000 		.long	.LM102
+ 2855 03e3 16        		.byte	0x16
+ 2856 03e4 00        		.byte	0x0
+ 2857 03e5 05        		.uleb128 0x5
+ 2858 03e6 02        		.byte	0x2
+ 2859 03e7 0000 0000 		.long	.LM103
+ 2860 03eb 03        		.byte	0x3
+ 2861 03ec FD7E      		.sleb128 -131
+ 2862 03ee 01        		.byte	0x1
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 52
+
+
+ 2863 03ef 00        		.byte	0x0
+ 2864 03f0 05        		.uleb128 0x5
+ 2865 03f1 02        		.byte	0x2
+ 2866 03f2 0000 0000 		.long	.LM104
+ 2867 03f6 17        		.byte	0x17
+ 2868 03f7 00        		.byte	0x0
+ 2869 03f8 05        		.uleb128 0x5
+ 2870 03f9 02        		.byte	0x2
+ 2871 03fa 0000 0000 		.long	.LM105
+ 2872 03fe 15        		.byte	0x15
+ 2873 03ff 00        		.byte	0x0
+ 2874 0400 05        		.uleb128 0x5
+ 2875 0401 02        		.byte	0x2
+ 2876 0402 0000 0000 		.long	.LM106
+ 2877 0406 17        		.byte	0x17
+ 2878 0407 00        		.byte	0x0
+ 2879 0408 05        		.uleb128 0x5
+ 2880 0409 02        		.byte	0x2
+ 2881 040a 0000 0000 		.long	.LM107
+ 2882 040e 15        		.byte	0x15
+ 2883 040f 00        		.byte	0x0
+ 2884 0410 05        		.uleb128 0x5
+ 2885 0411 02        		.byte	0x2
+ 2886 0412 0000 0000 		.long	.LM108
+ 2887 0416 16        		.byte	0x16
+ 2888 0417 00        		.byte	0x0
+ 2889 0418 05        		.uleb128 0x5
+ 2890 0419 02        		.byte	0x2
+ 2891 041a 0000 0000 		.long	.LM109
+ 2892 041e 15        		.byte	0x15
+ 2893 041f 00        		.byte	0x0
+ 2894 0420 05        		.uleb128 0x5
+ 2895 0421 02        		.byte	0x2
+ 2896 0422 0000 0000 		.long	.Letext0
+ 2897 0426 00        		.byte	0x0
+ 2898 0427 01        		.uleb128 0x1
+ 2899 0428 01        		.byte	0x1
+ 2900               	.LELT0:
+ 2901 0429 1600 0000 		.section	.debug_str,"MS",@progbits,1
+ 2901      0200 1000 
+ 2901      0000 0101 
+ 2901      FB0E 0A00 
+ 2901      0101 0101 
+ 2902               	.LASF44:
+ 2903 0000 696E 6974 		.string	"init_lcd"
+ 2903      5F6C 6364 
+ 2903      00
+ 2904               	.LASF27:
+ 2905 0009 7365 745F 		.string	"set_orientation"
+ 2905      6F72 6965 
+ 2905      6E74 6174 
+ 2905      696F 6E00 
+ 2906               	.LASF40:
+ 2907 0019 474E 5520 		.string	"GNU C 4.3.3"
+ 2907      4320 342E 
+ 2907      332E 3300 
+ 2908               	.LASF21:
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 53
+
+
+ 2909 0025 7269 6768 		.string	"right"
+ 2909      7400 
+ 2910               	.LASF25:
+ 2911 002b 6765 745F 		.string	"get_width"
+ 2911      7769 6474 
+ 2911      6800 
+ 2912               	.LASF9:
+ 2913 0035 7072 6F67 		.string	"prog_char"
+ 2913      5F63 6861 
+ 2913      7200 
+ 2914               	.LASF23:
+ 2915 003f 7265 6374 		.string	"rectangle"
+ 2915      616E 676C 
+ 2915      6500 
+ 2916               	.LASF43:
+ 2917 0049 636C 6561 		.string	"clear_screen"
+ 2917      725F 7363 
+ 2917      7265 656E 
+ 2917      00
+ 2918               	.LASF2:
+ 2919 0056 7569 6E74 		.string	"uint8_t"
+ 2919      385F 7400 
+ 2920               	.LASF34:
+ 2921 005e 5F5F 6164 		.string	"__addr16"
+ 2921      6472 3136 
+ 2921      00
+ 2922               	.LASF15:
+ 2923 0067 7769 6474 		.string	"width"
+ 2923      6800 
+ 2924               	.LASF7:
+ 2925 006d 6C6F 6E67 		.string	"long long int"
+ 2925      206C 6F6E 
+ 2925      6720 696E 
+ 2925      7400 
+ 2926               	.LASF38:
+ 2927 007b 666F 6E74 		.string	"font5x7"
+ 2927      3578 3700 
+ 2928               	.LASF33:
+ 2929 0083 6269 7473 		.string	"bits"
+ 2929      00
+ 2930               	.LASF10:
+ 2931 0088 4E6F 7274 		.string	"North"
+ 2931      6800 
+ 2932               	.LASF5:
+ 2933 008e 6C6F 6E67 		.string	"long int"
+ 2933      2069 6E74 
+ 2933      00
+ 2934               	.LASF17:
+ 2935 0097 6F72 6965 		.string	"orient"
+ 2935      6E74 00
+ 2936               	.LASF18:
+ 2937 009e 666F 7265 		.string	"foreground"
+ 2937      6772 6F75 
+ 2937      6E64 00
+ 2938               	.LASF24:
+ 2939 00a9 6765 745F 		.string	"get_orientation"
+ 2939      6F72 6965 
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 54
+
+
+ 2939      6E74 6174 
+ 2939      696F 6E00 
+ 2940               	.LASF30:
+ 2941 00b9 6469 7370 		.string	"display_char"
+ 2941      6C61 795F 
+ 2941      6368 6172 
+ 2941      00
+ 2942               	.LASF1:
+ 2943 00c6 756E 7369 		.string	"unsigned char"
+ 2943      676E 6564 
+ 2943      2063 6861 
+ 2943      7200 
+ 2944               	.LASF13:
+ 2945 00d4 4561 7374 		.string	"East"
+ 2945      00
+ 2946               	.LASF22:
+ 2947 00d9 626F 7474 		.string	"bottom"
+ 2947      6F6D 00
+ 2948               	.LASF0:
+ 2949 00e0 7369 676E 		.string	"signed char"
+ 2949      6564 2063 
+ 2949      6861 7200 
+ 2950               	.LASF8:
+ 2951 00ec 6C6F 6E67 		.string	"long long unsigned int"
+ 2951      206C 6F6E 
+ 2951      6720 756E 
+ 2951      7369 676E 
+ 2951      6564 2069 
+ 2952               	.LASF16:
+ 2953 0103 6865 6967 		.string	"height"
+ 2953      6874 00
+ 2954               	.LASF4:
+ 2955 010a 756E 7369 		.string	"unsigned int"
+ 2955      676E 6564 
+ 2955      2069 6E74 
+ 2955      00
+ 2956               	.LASF3:
+ 2957 0117 7569 6E74 		.string	"uint16_t"
+ 2957      3136 5F74 
+ 2957      00
+ 2958               	.LASF35:
+ 2959 0120 5F5F 7265 		.string	"__result"
+ 2959      7375 6C74 
+ 2959      00
+ 2960               	.LASF14:
+ 2961 0129 6F72 6965 		.string	"orientation"
+ 2961      6E74 6174 
+ 2961      696F 6E00 
+ 2962               	.LASF36:
+ 2963 0135 6368 6172 		.string	"char"
+ 2963      00
+ 2964               	.LASF20:
+ 2965 013a 6C65 6674 		.string	"left"
+ 2965      00
+ 2966               	.LASF42:
+ 2967 013f 433A 5C55 		.string	"C:\\Users\\shere_000\\Documents\\Year 2\\Smart Meter\\lcdlib"
+ 2967      7365 7273 
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 55
+
+
+ 2967      5C73 6865 
+ 2967      7265 5F30 
+ 2967      3030 5C44 
+ 2968               	.LASF41:
+ 2969 0176 6C63 642E 		.string	"lcd.c"
+ 2969      6300 
+ 2970               	.LASF11:
+ 2971 017c 5765 7374 		.string	"West"
+ 2971      00
+ 2972               	.LASF37:
+ 2973 0181 6469 7370 		.string	"display_string"
+ 2973      6C61 795F 
+ 2973      7374 7269 
+ 2973      6E67 00
+ 2974               	.LASF28:
+ 2975 0190 6669 6C6C 		.string	"fill_rectangle"
+ 2975      5F72 6563 
+ 2975      7461 6E67 
+ 2975      6C65 00
+ 2976               	.LASF6:
+ 2977 019f 6C6F 6E67 		.string	"long unsigned int"
+ 2977      2075 6E73 
+ 2977      6967 6E65 
+ 2977      6420 696E 
+ 2977      7400 
+ 2978               	.LASF12:
+ 2979 01b1 536F 7574 		.string	"South"
+ 2979      6800 
+ 2980               	.LASF39:
+ 2981 01b7 6469 7370 		.string	"display"
+ 2981      6C61 7900 
+ 2982               	.LASF29:
+ 2983 01bf 6669 6C6C 		.string	"fill_rectangle_indexed"
+ 2983      5F72 6563 
+ 2983      7461 6E67 
+ 2983      6C65 5F69 
+ 2983      6E64 6578 
+ 2984               	.LASF26:
+ 2985 01d6 6765 745F 		.string	"get_height"
+ 2985      6865 6967 
+ 2985      6874 00
+ 2986               	.LASF32:
+ 2987 01e1 6D61 736B 		.string	"mask"
+ 2987      00
+ 2988               	.LASF31:
+ 2989 01e6 6664 6174 		.string	"fdata"
+ 2989      6100 
+ 2990               	.LASF19:
+ 2991 01ec 6261 636B 		.string	"background"
+ 2991      6772 6F75 
+ 2991      6E64 00
+ 2992               	.global __do_copy_data
+GAS LISTING C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s 			page 56
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd.c
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:2      *ABS*:0000003f __SREG__
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:5      *ABS*:00000034 __CCP__
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:18     .text:00000000 set_orientation
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:929    .data:00000000 display
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:170    .text:00000108 get_orientation
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:184    .text:00000112 get_width
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:198    .text:0000011c get_height
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:212    .text:00000126 fill_rectangle
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:363    .text:00000204 fill_rectangle_indexed
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:522    .text:000002f0 clear_screen
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:589    .text:0000036e display_char
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:859    .text:0000050a display_string
+C:\Users\SHERE_~1\AppData\Local\Temp/ccykKjoO.s:899    .text:00000530 init_lcd
+
+UNDEFINED SYMBOLS
+font5x7
+init_display_controller
+__do_copy_data
