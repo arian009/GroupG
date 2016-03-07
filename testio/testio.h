@@ -26,6 +26,9 @@ typedef struct {
 	rectangle r2;
 	rectangle r3;
 	rectangle r4;
+	rectangle r5;
+	rectangle r6;
+	rectangle r7;
 	int x10;
 	int x11;
 	int x21;

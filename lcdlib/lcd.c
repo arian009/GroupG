@@ -6,8 +6,10 @@
 #include "ili934x.h"
 #include "font.h"
 #include "lcd.h"
+#include <stdlib.h>
 
 lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, WHITE, BLACK};
+uint16_t* raster;
 
 void init_lcd()
 {
@@ -21,6 +23,8 @@ void init_lcd()
 	DATA_DDR = 0xFF;
 	
 	init_display_controller();
+	
+	raster = malloc(sizeof(uint16_t) * LCDWIDTH * LCDHEIGHT);
 }
 
 void set_orientation(orientation o)
@@ -80,6 +84,33 @@ void fill_rectangle(rectangle r, uint16_t col)
 	for(x=r.left; x<=r.right; x++)
 		for(y=r.top; y<=r.bottom; y++)
 			write_data16(col);
+}
+
+void draw_check() {
+	uint16_t x, y;
+	for(x = 0; x < LCDWIDTH; x++) {
+		for(y = 0; y < LCDHEIGHT; y++) {
+			if((x*y) % 2 == 0) {
+				*(raster + (x * LCDHEIGHT) + y) = BLACK;
+			} else {
+				*(raster + (x * LCDHEIGHT) + y) = WHITE;
+			}
+		}
+	}
+}
+
+void clear_raster() {
+	uint16_t x, y;
+	for(x = 0; x < LCDWIDTH; x++) {
+		for(y = 0; y < LCDHEIGHT; y++) {
+			*(raster + (x * LCDHEIGHT) + y) = BLACK;
+		}
+	}
+}
+
+void flip_buffer() {
+	rectangle r = {0, display.width-1, 0, display.height-1};
+	fill_rectangle_indexed(r, raster);
 }
 
 void fill_rectangle_indexed(rectangle r, uint16_t* col)

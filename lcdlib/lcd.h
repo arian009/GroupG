@@ -37,6 +37,10 @@ typedef struct {
 	uint16_t top, bottom;
 } rectangle;	
 
+void draw_check();
+void clear_raster();
+void flip_buffer();
+
 void init_lcd();
 void set_orientation(orientation o);
 orientation get_orientation();
