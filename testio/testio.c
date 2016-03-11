@@ -68,6 +68,8 @@ void input(InputParams* dest) {
  */
 void process(State* state, InputParams* src, OutputParams* dest) {
 	draw_voltage(state->x10, state->x11, state->lastVoltage1, src->analog0); //Draw three voltage bars.
+	//state->runningTotal = (state->runningTotal + src->analog1) / 2;
+	//draw_voltage(state->x11, state->x21, 3.3, state->runningTotal);
 	draw_voltage(state->x11, state->x21, state->lastVoltage2, src->analog1);
 	draw_voltage(state->x21, state->x31, state->lastVoltage3, src->analog2);
 	state->lastVoltage1 = src->analog0; //Store last voltages. To prevent flickering.

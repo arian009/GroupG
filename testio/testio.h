@@ -20,6 +20,7 @@ typedef struct {
 } OutputParams;
 
 typedef struct {
+	double runningTotal;
 	double lastVoltage1;
 	double lastVoltage2;
 	double lastVoltage3;

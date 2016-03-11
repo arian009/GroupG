@@ -37,10 +37,6 @@ typedef struct {
 	uint16_t top, bottom;
 } rectangle;	
 
-void draw_check();
-void clear_raster();
-void flip_buffer();
-
 void init_lcd();
 void set_orientation(orientation o);
 orientation get_orientation();
@@ -49,6 +45,8 @@ uint16_t get_height();
 void clear_screen();
 void fill_rectangle(rectangle r, uint16_t col);
 void fill_rectangle_indexed(rectangle r, uint16_t* col);
+void fill_rectangle_indexed_scale(rectangle r, uint16_t* col, int s);
+void fill_rectangle_bitmap(rectangle r, uint16_t* bitmap, uint16_t foreground, uint16_t background);
 void display_char(char c);
 void display_string(char *str);
 

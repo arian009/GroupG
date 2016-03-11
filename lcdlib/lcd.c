@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, WHITE, BLACK};
-uint16_t* raster;
+//uint16_t* raster;
 
 void init_lcd()
 {
@@ -24,7 +24,7 @@ void init_lcd()
 	
 	init_display_controller();
 	
-	raster = malloc(sizeof(uint16_t) * LCDWIDTH * LCDHEIGHT);
+	//raster = malloc(sizeof(uint16_t) * LCDWIDTH * LCDHEIGHT);
 }
 
 void set_orientation(orientation o)
@@ -86,7 +86,7 @@ void fill_rectangle(rectangle r, uint16_t col)
 			write_data16(col);
 }
 
-void draw_check() {
+/*void draw_check() {
 	uint16_t x, y;
 	for(x = 0; x < LCDWIDTH; x++) {
 		for(y = 0; y < LCDHEIGHT; y++) {
@@ -111,10 +111,9 @@ void clear_raster() {
 void flip_buffer() {
 	rectangle r = {0, display.width-1, 0, display.height-1};
 	fill_rectangle_indexed(r, raster);
-}
+}*/
 
-void fill_rectangle_indexed(rectangle r, uint16_t* col)
-{
+void fill_rectangle_indexed(rectangle r, uint16_t* col) {
 	uint16_t x, y;
 	write_cmd(COLUMN_ADDRESS_SET);
 	write_data16(r.left);
@@ -123,9 +122,62 @@ void fill_rectangle_indexed(rectangle r, uint16_t* col)
 	write_data16(r.top);
 	write_data16(r.bottom);
 	write_cmd(MEMORY_WRITE);
-	for(x=r.left; x<=r.right; x++)
-		for(y=r.top; y<=r.bottom; y++)
-			write_data16(*col++);
+	for(x=r.left; x<=r.right; x++) {
+		for(y=r.top; y<=r.bottom; y++) {
+			write_data16(*col);
+			col++;
+		}
+	}
+}
+
+void fill_rectangle_indexed_scale(rectangle r, uint16_t* col, int s) {
+	uint16_t x, y, i, j, k;
+	write_cmd(COLUMN_ADDRESS_SET);
+	//write_data16(r.left);
+	//write_data16(r.left + ((r.right - r.left + 1) * s) - 1);
+	write_data16(r.left * s);
+	write_data16(r.right * s);
+	write_cmd(PAGE_ADDRESS_SET);
+	//write_data16(r.top);
+	//write_data16(r.top + ((r.bottom - r.top + 1) * s) - 1);
+	write_data16(r.top * s);
+	write_data16(r.bottom * s);
+	write_cmd(MEMORY_WRITE);
+	for(x = 0; x < (r.right - r.left); x++) {
+		for(i = 0; i < s; i++) {
+			for(y = 0; y < (r.bottom - r.top); y++) {
+				k = (x * (r.bottom - r.top)) + y;
+				for(j = 0; j < s; j++) {
+					write_data16(*(col + k));
+				}
+			}
+		}
+	}
+}
+
+void fill_rectangle_bitmap(rectangle r, uint16_t* bitmap, uint16_t foreground, uint16_t background) {
+	uint16_t x, y, i;
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(r.left);
+	write_data16(r.right);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(r.top);
+	write_data16(r.bottom);
+	write_cmd(MEMORY_WRITE);
+	i = 0;
+	for(x = r.left; x <= r.right; x++) {
+		for(y = r.top; y <= r.bottom; y++) {
+			if((*bitmap) & (1 << i)) {
+				write_data16(foreground);
+			} else {
+				write_data16(background);
+			}
+			if(++i == 16) {
+				i = 0;
+				bitmap++;
+			}
+		}
+	}
 }
 
 void clear_screen()
